@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xua4m083ndvl"
-path="res://.godot/imported/power_up-removebg-preview.png-7854a8fd5903e5f033096c0cbf52d8e3.ctex"
+uid="uid://bysfjodklji5r"
+path="res://.godot/imported/power_up-removebg-preview.png-e1d562a5bb9dfb4a885b8eff22ec2a6f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/power_up-removebg-preview.png"
-dest_files=["res://.godot/imported/power_up-removebg-preview.png-7854a8fd5903e5f033096c0cbf52d8e3.ctex"]
+source_file="res://sounds/power_up-removebg-preview.png"
+dest_files=["res://.godot/imported/power_up-removebg-preview.png-e1d562a5bb9dfb4a885b8eff22ec2a6f.ctex"]
 
 [params]
 
