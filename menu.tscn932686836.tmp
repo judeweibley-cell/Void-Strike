@@ -1,0 +1,298 @@
+[gd_scene load_steps=19 format=3 uid="uid://d0eqqds5ayb7t"]
+
+[ext_resource type="Script" uid="uid://btfvc7ual3hxh" path="res://scenes/menu.gd" id="1_mhnvy"]
+[ext_resource type="Texture2D" uid="uid://wdjph2we5ihj" path="res://assets/Background.png" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://ggd3i34bg4mq" path="res://assets/Screenshot_2026-06-03_191327-removebg-preview.png" id="2_con2f"]
+[ext_resource type="FontFile" uid="uid://ct04e3ohjsinm" path="res://fonts/Kenney Future Narrow.ttf" id="3_mhnvy"]
+[ext_resource type="Script" uid="uid://cmr23k6k0bc1i" path="res://scripts/sprite_2d.gd" id="4_4ytvr"]
+[ext_resource type="Script" uid="uid://dmk01bdp83tol" path="res://scenes/texture_button.gd" id="7_i6lef"]
+[ext_resource type="Script" uid="uid://dr014ewgxh8uu" path="res://scenes/check_button.gd" id="7_v86rl"]
+[ext_resource type="Script" uid="uid://b3f8qsml6cx3m" path="res://scenes/check_button_2.gd" id="8_13sgg"]
+[ext_resource type="Texture2D" uid="uid://brielmo3xh23a" path="res://download__3_-removebg-preview.png" id="10_70i5f"]
+[ext_resource type="Script" uid="uid://p0mshagc3m1u" path="res://scenes/continue.gd" id="10_mj5lg"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vjb58"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(270, 1, 1)
+direction = Vector3(0, -1, 0)
+spread = 0.0
+initial_velocity_min = -1000.0
+initial_velocity_max = -1000.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13sgg"]
+bg_color = Color(0.0666667, 0.435294, 0.670588, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+expand_margin_left = 12.0
+expand_margin_top = 7.0
+expand_margin_right = 7.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhnvy"]
+bg_color = Color(0.0666667, 0.435294, 0.670588, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+expand_margin_left = 12.0
+expand_margin_top = 7.0
+expand_margin_right = 7.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v86rl"]
+bg_color = Color(0.0666667, 0.435294, 0.670588, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+expand_margin_left = 12.0
+expand_margin_top = 18.0
+expand_margin_right = 7.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ytvr"]
+bg_color = Color(0.0666667, 0.435294, 0.670588, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_70i5f"]
+bg_color = Color(0.0666667, 0.435294, 0.670588, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3eks"]
+bg_color = Color(0.117647, 0.537255, 0.815686, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6lef"]
+bg_color = Color(0.117647, 0.537255, 0.815686, 1)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mhnvy")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(0, 960)
+
+[node name="PurpleStars" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+texture = ExtResource("1_yqeox")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 540, 960)
+
+[node name="StarParticleEffect" type="GPUParticles2D" parent="."]
+position = Vector2(270, -50)
+scale = Vector2(0.921367, 1.99851)
+amount = 20
+preprocess = 5.0
+collision_base_size = 128.0
+trail_lifetime = 1.25
+process_material = SubResource("ParticleProcessMaterial_vjb58")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(260, 821)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_con2f")
+script = ExtResource("4_4ytvr")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 34.0
+offset_right = 480.0
+offset_bottom = 105.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 62
+text = "VOID STRIKE"
+horizontal_alignment = 1
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = 428.0
+offset_right = 54.0
+offset_bottom = 483.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_13sgg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mhnvy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v86rl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4ytvr")
+text = "Play"
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 891.0
+offset_right = 209.0
+offset_bottom = 971.0
+texture_normal = ExtResource("10_70i5f")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("7_i6lef")
+
+[node name="Panel" type="Panel" parent="TextureButton"]
+process_mode = 4
+show_behind_parent = true
+layout_mode = 0
+offset_left = 22.0
+offset_top = 11.0
+offset_right = 86.0
+offset_bottom = 78.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_70i5f")
+
+[node name="SettingsPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 71.0
+offset_top = 120.0
+offset_right = 472.0
+offset_bottom = 491.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g3eks")
+
+[node name="Label" type="Label" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 5.0
+offset_right = 397.0
+offset_bottom = 110.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 55
+text = " Settings:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CheckButton" type="CheckButton" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 97.0
+offset_right = 264.0
+offset_bottom = 134.0
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/focus = SubResource("StyleBoxFlat_i6lef")
+text = "Music"
+script = ExtResource("7_v86rl")
+
+[node name="CheckButton2" type="CheckButton" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 151.0
+offset_right = 263.0
+offset_bottom = 188.0
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/focus = SubResource("StyleBoxFlat_i6lef")
+text = "sound EFFECTS"
+script = ExtResource("8_13sgg")
+
+[node name="ResetData" type="Button" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 219.0
+offset_right = 361.0
+offset_bottom = 337.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 40
+text = "RESET DATA"
+
+[node name="ConfirmationPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 71.0
+offset_top = 120.0
+offset_right = 472.0
+offset_bottom = 491.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g3eks")
+
+[node name="Label" type="Label" parent="ConfirmationPanel"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 33.0
+offset_right = 410.0
+offset_bottom = 249.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 40
+text = "ARE YOU SURE?"
+
+[node name="Cancel" type="Button" parent="ConfirmationPanel"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 107.0
+offset_right = 365.0
+offset_bottom = 204.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 40
+text = "CANCEL"
+
+[node name="Continue" type="Button" parent="ConfirmationPanel"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 233.0
+offset_right = 365.0
+offset_bottom = 330.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 40
+text = "CONTINUE"
+script = ExtResource("10_mj5lg")
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="toggled" from="SettingsPanel/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="toggled" from="SettingsPanel/CheckButton2" to="." method="_on_check_button_2_toggled"]
+[connection signal="pressed" from="SettingsPanel/ResetData" to="." method="_on_reset_data_pressed"]
+[connection signal="pressed" from="ConfirmationPanel/Cancel" to="." method="_on_cancel_pressed"]
+[connection signal="pressed" from="ConfirmationPanel/Continue" to="ConfirmationPanel/Continue" method="_on_pressed"]

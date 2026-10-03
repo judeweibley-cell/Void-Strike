@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4j62q411ino1"]
+
+[ext_resource type="Script" uid="uid://54sianqyq8i7" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://ggd3i34bg4mq" path="res://assets/Screenshot_2026-06-03_191327-removebg-preview.png" id="2_g2els"]
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+position = Vector2(280, 777)
+collision_mask = 2
+motion_mode = 1
+script = ExtResource("1_g2els")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.299972, 0.800049)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_g2els")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(257, 871)
+rotation = 3.14159
+polygon = PackedVector2Array(227, 879, 237, 897, 242, 897, 241, 886, 244, 887, 243, 889, 250, 895, 260, 895, 269, 889, 268, 887, 271, 887, 271, 896, 277, 898, 285, 880, 297, 882, 298, 876, 296, 870, 294, 864, 291, 858, 288, 854, 285, 853, 285, 848, 274, 848, 272, 846, 267, 848, 260, 848, 258, 856, 254, 856, 254, 848, 244, 848, 241, 845, 239, 848, 237, 848, 228, 847, 227, 854, 224, 857, 221, 861, 218, 868, 216, 873, 215, 876, 216, 878, 217, 883)
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(-147, -238)
+
+[node name="DoubleShot1" type="Marker2D" parent="."]
+position = Vector2(-157, -238)
+
+[node name="DoubleShot2" type="Marker2D" parent="."]
+position = Vector2(-137, -238)

@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxoj1ma6dy5wg"]
+
+[ext_resource type="Script" uid="uid://clp7gvgeu8bg7" path="res://scenes/tank_enemy.gd" id="1_1jugj"]
+[ext_resource type="Texture2D" uid="uid://cjiv3djs8st2t" path="res://assets/Screenshot_2026-08-26_201304-removebg-preview.png" id="1_oyqd1"]
+
+[node name="Tank Enemy" type="Area2D"]
+collision_layer = 65535
+script = ExtResource("1_1jugj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-8.9407e-07, 4.54747e-13)
+scale = Vector2(0.169039, 0.169039)
+texture = ExtResource("1_oyqd1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, 7)
+polygon = PackedVector2Array(-10, -1, -5, -1, -3, 7, 5, 7, 7, -1, 12, 0, 12, 2, 11, 4, 12, 6, 12, 7, 14, 7, 15, 5, 16, 10, 19, 10, 20, 9, 22, 7, 19, -9, 18, -16, 11, -20, 11, -21, 10, -22, 10, -24, 4, -24, 4, -21, -2, -21, -2, -24, -9, -24, -9, -21, -9, -20, -16, -17, -20, 7, -18, 10, -15, 10, -14, 10, -13, 6, -12, 7, -10, 8, -9, 5, -9, 3)
+
+[node name="Muzzle 1" type="Marker2D" parent="."]
+position = Vector2(-11, 14)
+
+[node name="Muzzle 2" type="Marker2D" parent="."]
+position = Vector2(13, 14)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(1, -28)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

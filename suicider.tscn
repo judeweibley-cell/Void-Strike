@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://b24bi8aju5tp7"]
+
+[ext_resource type="Script" uid="uid://c15v4banaws0d" path="res://suicider.gd" id="1_aq1g1"]
+[ext_resource type="Texture2D" uid="uid://8t5wbjfdhs3t" path="res://assets/Screenshot_2026-09-01_202727-removebg-preview.png" id="2_7a3g0"]
+[ext_resource type="Script" uid="uid://d0enfjwp06vk8" path="res://scenes/explosion.gd" id="3_oorhy"]
+[ext_resource type="Texture2D" uid="uid://bcba20qv4s80r" path="res://assets/Screenshot_2026-08-31_210527-removebg-preview.png" id="4_7a3g0"]
+
+[node name="Suicider" type="Area2D"]
+collision_layer = 3
+script = ExtResource("1_aq1g1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 30)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_7a3g0")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="Explosion" type="Area2D" parent="."]
+position = Vector2(1, 54)
+script = ExtResource("3_oorhy")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Explosion"]
+position = Vector2(-2, -23)
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("4_7a3g0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-6, 28, -6, 27, -5, 26, -5, 24, -3, 24, -2, 27, 0, 26, 2, 27, 4, 26, 4, 24, 6, 24, 6, 27, 7, 27, 7, 29, 8, 31, 8, 34, 5, 37, 3, 37, 3, 33, -2, 33, -2, 37, -4, 37, -7, 33)
+
+[connection signal="animate_explosion" from="." to="Explosion" method="_on_suicider_animate_explosion"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

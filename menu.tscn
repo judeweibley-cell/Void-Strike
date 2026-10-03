@@ -1,0 +1,1594 @@
+[gd_scene load_steps=52 format=3 uid="uid://d0eqqds5ayb7t"]
+
+[ext_resource type="Script" uid="uid://btfvc7ual3hxh" path="res://scripts/menu.gd" id="1_mhnvy"]
+[ext_resource type="Texture2D" uid="uid://s36hf6u73lwh" path="res://Background.png" id="1_yqeox"]
+[ext_resource type="FontFile" uid="uid://ct04e3ohjsinm" path="res://fonts/Kenney Future Narrow.ttf" id="3_mhnvy"]
+[ext_resource type="Script" uid="uid://dmk01bdp83tol" path="res://scripts/Settings.gd" id="7_i6lef"]
+[ext_resource type="Script" uid="uid://dr014ewgxh8uu" path="res://scripts/check_button.gd" id="7_v86rl"]
+[ext_resource type="Script" uid="uid://b3f8qsml6cx3m" path="res://scripts/check_button_2.gd" id="8_13sgg"]
+[ext_resource type="Script" uid="uid://b4vwlsbilpp0f" path="res://scripts/leaderboard.gd" id="8_70i5f"]
+[ext_resource type="Script" uid="uid://cc3ghsegixfhc" path="res://scripts/#1.gd" id="10_ufwb2"]
+[ext_resource type="AudioStream" uid="uid://4whi6bkul5m7" path="res://sounds/Meow.wav" id="11_lnf0i"]
+[ext_resource type="Script" uid="uid://b0gdeojebr3fh" path="res://scenes/key_binds.gd" id="12_6cdou"]
+[ext_resource type="Script" uid="uid://ckj8jamk1o134" path="res://scenes/log_panel.gd" id="14_7jp70"]
+[ext_resource type="AudioStream" uid="uid://dmypgg431s63d" path="res://sounds/Click button (16 sound effects).mp3.wav" id="14_i42df"]
+[ext_resource type="Script" uid="uid://dwqpdibpei5cx" path="res://scenes/achievements.gd" id="15_6wigr"]
+[ext_resource type="Texture2D" uid="uid://r24pgqksfya" path="res://assets/Screenshot_2026-06-03_190847-removebg-preview.png" id="15_7jp70"]
+[ext_resource type="Texture2D" uid="uid://8ssniikhk3ub" path="res://assets/Screenshot_2026-06-03_204803-removebg-preview.png" id="16_mxgkd"]
+[ext_resource type="Texture2D" uid="uid://bri1xj672cwbu" path="res://assets/Screenshot_2026-07-11_120149-removebg-preview.png" id="17_fy8yy"]
+[ext_resource type="Texture2D" uid="uid://d4kgvbdfk57yn" path="res://assets/Screenshot_2026-08-06_111700-removebg-preview.png" id="17_g6gyw"]
+[ext_resource type="Texture2D" uid="uid://n851bjokllwg" path="res://assets/Screenshot_2026-08-09_200218-removebg-preview.png" id="18_3dmrc"]
+[ext_resource type="Texture2D" uid="uid://cjiv3djs8st2t" path="res://assets/Screenshot_2026-08-26_201304-removebg-preview.png" id="19_81l6r"]
+[ext_resource type="Texture2D" uid="uid://8t5wbjfdhs3t" path="res://assets/Screenshot_2026-09-01_202727-removebg-preview.png" id="20_rsfmq"]
+[ext_resource type="Texture2D" uid="uid://n1l4v2dj4nb3" path="res://assets/Screenshot_2026-09-04_214204-removebg-preview.png" id="21_oi1it"]
+[ext_resource type="Script" uid="uid://c6bnubedh8gwl" path="res://scenes/brief_menu_tutorial.gd" id="24_ffqrc"]
+[ext_resource type="Texture2D" uid="uid://brsf66fg6cbfq" path="res://assets/canva-人工智能素材-宇航员-MAGT4ttMlS8-removebg-preview.png" id="24_lnf0i"]
+[ext_resource type="Script" uid="uid://r2g7tnmuqikj" path="res://scenes/tips.gd" id="25_ffqrc"]
+[ext_resource type="Script" uid="uid://dbftkm53ukmbo" path="res://scenes/highest_wave.gd" id="26_48ryc"]
+[ext_resource type="Script" uid="uid://ho4ajojnswl3" path="res://scenes/menuhighscore.gd" id="26_g54pe"]
+[ext_resource type="Script" uid="uid://bhuojcxl4qiov" path="res://scenes/space_guy.gd" id="26_x16fv"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vjb58"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(270, 1, 1)
+direction = Vector3(0, -1, 0)
+spread = 0.0
+initial_velocity_min = -1000.0
+initial_velocity_max = -1000.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ufwb2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3eks"]
+bg_color = Color(0.117647, 0.537255, 0.815686, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i42df"]
+bg_color = Color(0.105882, 0.27451, 0.384314, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6cdou"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i42df"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7jp70"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g54pe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_48ryc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mxgkd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g6gyw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3dmrc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_81l6r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rsfmq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oi1it"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fy8yy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6wigr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mxgkd"]
+bg_color = Color(0.117647, 0.537255, 0.815686, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lnf0i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jp70"]
+bg_color = Color(0.105882, 0.27451, 0.384314, 1)
+border_width_left = 4
+border_width_right = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 18
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ffqrc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6gyw"]
+bg_color = Color(0.105882, 0.27451, 0.384314, 1)
+border_width_left = 3
+border_width_right = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x16fv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3dmrc"]
+bg_color = Color(0.105882, 0.27451, 0.384314, 1)
+border_width_left = 3
+border_width_right = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_right = 18
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mhnvy")
+metadata/_edit_vertical_guides_ = [-554.0]
+
+[node name="Highest Wave" type="Label" parent="."]
+layout_mode = 0
+offset_top = 164.0
+offset_right = 540.0
+offset_bottom = 219.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 25
+text = "~~Highest Wave: 0~~"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("26_48ryc")
+
+[node name="Highscore" type="Label" parent="."]
+layout_mode = 0
+offset_top = 108.0
+offset_right = 540.0
+offset_bottom = 163.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 35
+text = "~~Highscore: 0~~"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("26_g54pe")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(0, 960)
+
+[node name="PurpleStars" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(0, -1)
+texture = ExtResource("1_yqeox")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 540, 960)
+
+[node name="StarParticleEffect" type="GPUParticles2D" parent="."]
+position = Vector2(270, -50)
+scale = Vector2(0.921367, 1.99851)
+amount = 20
+preprocess = 5.0
+collision_base_size = 128.0
+trail_lifetime = 1.25
+process_material = SubResource("ParticleProcessMaterial_vjb58")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 34.0
+offset_right = 540.0
+offset_bottom = 105.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 62
+text = "VOID STRIKE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -209.0
+offset_top = -250.0
+offset_right = 208.0
+offset_bottom = -195.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ufwb2")
+text = "Play"
+
+[node name="NotesPanel" type="Panel" parent="."]
+visible = false
+top_level = true
+layout_mode = 0
+offset_left = 62.0
+offset_top = 115.0
+offset_right = 478.0
+offset_bottom = 731.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g3eks")
+
+[node name="Label" type="Label" parent="NotesPanel"]
+layout_mode = 0
+offset_left = 5.0
+offset_right = 399.0
+offset_bottom = 105.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 40
+text = "Notes:"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("10_ufwb2")
+
+[node name="LinkButton" type="LinkButton" parent="NotesPanel"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 478.0
+offset_right = 349.0
+offset_bottom = 518.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 30
+text = "Join the Discord!"
+underline = 1
+uri = "https://discord.gg/ccgyRZArYm"
+
+[node name="Panel" type="Panel" parent="NotesPanel"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 82.0
+offset_right = 391.0
+offset_bottom = 472.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_i42df")
+
+[node name="Label2" type="Label" parent="NotesPanel"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 83.0
+offset_right = 392.0
+offset_bottom = 472.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 22
+text = "Void Strike was first created on May 31 2026 as a summer project to try and learn Godot for the Hack Club Stardance Challenge in order to try and win a 3D printer. For anyone Rating my project please consider that before this I had absolutely no idea how to use Godot, and that this is my first project ever. Thank You!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Exit notes" type="Button" parent="NotesPanel"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 531.0
+offset_right = 382.0
+offset_bottom = 588.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6cdou")
+text = "EXIT"
+
+[node name="Settings" type="Button" parent="."]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 379.0
+offset_right = 478.0
+offset_bottom = 434.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i42df")
+text = "Settings"
+script = ExtResource("7_i6lef")
+
+[node name="Notes" type="Button" parent="."]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 454.0
+offset_right = 478.0
+offset_bottom = 508.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7jp70")
+text = "Notes"
+script = ExtResource("8_70i5f")
+
+[node name="Log" type="Button" parent="."]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 305.0
+offset_right = 478.0
+offset_bottom = 359.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7jp70")
+text = "Log"
+
+[node name="SettingsPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 59.0
+offset_top = 115.0
+offset_right = 490.0
+offset_bottom = 839.0
+pivot_offset = Vector2(-40, 180)
+theme_override_styles/panel = SubResource("StyleBoxFlat_g3eks")
+
+[node name="UpPanel" type="Panel" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 283.0
+offset_right = 383.0
+offset_bottom = 324.0
+
+[node name="DownPanel" type="Panel" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 329.0
+offset_right = 383.0
+offset_bottom = 370.0
+
+[node name="LeftPanel" type="Panel" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 375.0
+offset_right = 383.0
+offset_bottom = 416.0
+
+[node name="ShootPanel" type="Panel" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 467.0
+offset_right = 383.0
+offset_bottom = 508.0
+
+[node name="BoostPanel" type="Panel" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 513.0
+offset_right = 383.0
+offset_bottom = 554.0
+
+[node name="RightPanel" type="Panel" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 421.0
+offset_right = 383.0
+offset_bottom = 462.0
+
+[node name="ResetPanel" type="Panel" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 559.0
+offset_right = 383.0
+offset_bottom = 600.0
+
+[node name="Panel" type="Panel" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 86.0
+offset_right = 410.0
+offset_bottom = 207.0
+
+[node name="Settings" type="Label" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 11.0
+offset_right = 420.0
+offset_bottom = 87.0
+scale = Vector2(1, 0.995939)
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 55
+text = " AUDIO:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CheckButton" type="CheckButton" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 87.0
+offset_right = 274.0
+offset_bottom = 124.0
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g54pe")
+text = "Music"
+script = ExtResource("7_v86rl")
+
+[node name="CheckButton2" type="CheckButton" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 150.0
+offset_right = 276.0
+offset_bottom = 187.0
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/focus = SubResource("StyleBoxEmpty_48ryc")
+text = "sound EFFECTS"
+script = ExtResource("8_13sgg")
+
+[node name="Controls" type="Label" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 209.0
+offset_right = 421.0
+offset_bottom = 283.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 55
+text = "CONTROLS:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Exit" type="Button" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 648.0
+offset_right = 383.0
+offset_bottom = 704.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mxgkd")
+text = "Exit"
+
+[node name="KeyBinds" type="Node2D" parent="SettingsPanel"]
+position = Vector2(0, -10)
+script = ExtResource("12_6cdou")
+
+[node name="Shoot" type="Button" parent="SettingsPanel/KeyBinds"]
+offset_left = 292.0
+offset_top = 477.0
+offset_right = 368.0
+offset_bottom = 511.0
+scale = Vector2(1.2, 1.2)
+focus_mode = 1
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g6gyw")
+text = "Reassign"
+
+[node name="Label" type="Label" parent="SettingsPanel/KeyBinds/Shoot"]
+layout_mode = 0
+offset_left = -195.833
+offset_top = 4.16669
+offset_right = -150.833
+offset_bottom = 27.1667
+text = "Shoot"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Key" type="Label" parent="SettingsPanel/KeyBinds/Shoot"]
+layout_mode = 0
+offset_left = -144.5
+offset_right = -5.50002
+offset_bottom = 34.0
+text = "SPACE"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Right" type="Button" parent="SettingsPanel/KeyBinds"]
+offset_left = 292.0
+offset_top = 431.0
+offset_right = 368.0
+offset_bottom = 465.0
+scale = Vector2(1.2, 1.2)
+focus_mode = 1
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3dmrc")
+text = "Reassign"
+
+[node name="Label" type="Label" parent="SettingsPanel/KeyBinds/Right"]
+layout_mode = 0
+offset_left = -195.833
+offset_top = 4.16671
+offset_right = -154.833
+offset_bottom = 27.1667
+text = "Right"
+
+[node name="Key" type="Label" parent="SettingsPanel/KeyBinds/Right"]
+layout_mode = 0
+offset_left = -144.5
+offset_right = -5.50002
+offset_bottom = 34.0
+text = "D"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Left" type="Button" parent="SettingsPanel/KeyBinds"]
+offset_left = 292.0
+offset_top = 385.0
+offset_right = 368.0
+offset_bottom = 419.0
+scale = Vector2(1.2, 1.2)
+focus_mode = 1
+theme_override_styles/focus = SubResource("StyleBoxEmpty_81l6r")
+text = "Reassign"
+
+[node name="Label" type="Label" parent="SettingsPanel/KeyBinds/Left"]
+layout_mode = 0
+offset_left = -196.167
+offset_top = 4.5
+offset_right = -166.167
+offset_bottom = 27.5
+text = "Left"
+
+[node name="Key" type="Label" parent="SettingsPanel/KeyBinds/Left"]
+layout_mode = 0
+offset_left = -144.5
+offset_right = -5.50002
+offset_bottom = 34.0
+text = "A"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Down" type="Button" parent="SettingsPanel/KeyBinds"]
+offset_left = 292.0
+offset_top = 339.0
+offset_right = 368.0
+offset_bottom = 373.0
+scale = Vector2(1.2, 1.2)
+focus_mode = 1
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rsfmq")
+text = "Reassign"
+
+[node name="Label" type="Label" parent="SettingsPanel/KeyBinds/Down"]
+layout_mode = 0
+offset_left = -195.833
+offset_top = 4.16663
+offset_right = -150.833
+offset_bottom = 27.1666
+text = "Down"
+
+[node name="Key" type="Label" parent="SettingsPanel/KeyBinds/Down"]
+layout_mode = 0
+offset_left = -144.5
+offset_right = -5.50002
+offset_bottom = 34.0
+text = "S"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Up" type="Button" parent="SettingsPanel/KeyBinds"]
+offset_left = 292.0
+offset_top = 293.0
+offset_right = 368.0
+offset_bottom = 327.0
+scale = Vector2(1.2, 1.2)
+focus_mode = 1
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oi1it")
+text = "Reassign"
+
+[node name="Label" type="Label" parent="SettingsPanel/KeyBinds/Up"]
+layout_mode = 0
+offset_left = -195.0
+offset_top = 5.83331
+offset_right = -173.0
+offset_bottom = 28.8333
+text = "Up"
+horizontal_alignment = 1
+
+[node name="Key" type="Label" parent="SettingsPanel/KeyBinds/Up"]
+layout_mode = 0
+offset_left = -144.5
+offset_right = -5.50002
+offset_bottom = 34.0
+text = "W"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Boost" type="Button" parent="SettingsPanel/KeyBinds"]
+offset_left = 292.0
+offset_top = 523.0
+offset_right = 368.0
+offset_bottom = 557.0
+scale = Vector2(1.2, 1.2)
+focus_mode = 1
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fy8yy")
+text = "Reassign"
+
+[node name="Label" type="Label" parent="SettingsPanel/KeyBinds/Boost"]
+layout_mode = 0
+offset_left = -196.667
+offset_top = 4.99995
+offset_right = -151.667
+offset_bottom = 27.9999
+text = "Boost"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Key" type="Label" parent="SettingsPanel/KeyBinds/Boost"]
+layout_mode = 0
+offset_left = -144.5
+offset_right = -5.50002
+offset_bottom = 34.0
+theme_override_font_sizes/font_size = 16
+text = "SHIFT"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ResetGame" type="Button" parent="SettingsPanel/KeyBinds"]
+offset_left = 292.0
+offset_top = 569.0
+offset_right = 368.0
+offset_bottom = 603.0
+scale = Vector2(1.2, 1.2)
+focus_mode = 1
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fy8yy")
+text = "Reassign"
+
+[node name="Label" type="Label" parent="SettingsPanel/KeyBinds/ResetGame"]
+layout_mode = 0
+offset_left = -196.667
+offset_top = 4.99995
+offset_right = -151.667
+offset_bottom = 27.9999
+text = "Reset"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Key" type="Label" parent="SettingsPanel/KeyBinds/ResetGame"]
+layout_mode = 0
+offset_left = -144.5
+offset_right = -5.50002
+offset_bottom = 34.0
+theme_override_font_sizes/font_size = 16
+text = "R"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Reset" type="Button" parent="SettingsPanel/KeyBinds"]
+offset_left = 140.0
+offset_top = 615.0
+offset_right = 266.0
+offset_bottom = 646.0
+scale = Vector2(1.2, 1.2)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6wigr")
+text = "Reset Keybinds"
+
+[node name="ClickSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_i42df")
+
+[node name="Typing sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_lnf0i")
+volume_db = -5.0
+pitch_scale = 9.55
+
+[node name="LogPanel" type="Panel" parent="."]
+visible = false
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 0
+offset_left = 59.0
+offset_top = 115.0
+offset_right = 490.0
+offset_bottom = 731.0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_mxgkd")
+script = ExtResource("14_7jp70")
+
+[node name="Exit" type="Button" parent="LogPanel"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 536.0
+offset_right = 406.0
+offset_bottom = 591.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 40
+text = "Exit"
+
+[node name="Label" type="Label" parent="LogPanel"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 25.0
+offset_right = 432.0
+offset_bottom = 149.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 45
+text = "Enemies"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stats" type="Node2D" parent="LogPanel"]
+visible = false
+
+[node name="Panel" type="Panel" parent="LogPanel/Stats"]
+offset_left = 26.0
+offset_top = 118.0
+offset_right = 406.0
+offset_bottom = 500.0
+
+[node name="Power Ups" type="Label" parent="LogPanel/Stats"]
+offset_left = 42.0
+offset_top = 370.0
+offset_right = 317.0
+offset_bottom = 405.0
+theme_override_font_sizes/font_size = 25
+text = "Power Ups Collected: 0"
+
+[node name="Fuel Burned" type="Label" parent="LogPanel/Stats"]
+offset_left = 42.0
+offset_top = 410.0
+offset_right = 254.0
+offset_bottom = 445.0
+theme_override_font_sizes/font_size = 25
+text = "Fuel Burned: 0"
+
+[node name="Highest Wave" type="Label" parent="LogPanel/Stats"]
+offset_left = 42.0
+offset_top = 130.0
+offset_right = 254.0
+offset_bottom = 165.0
+theme_override_font_sizes/font_size = 25
+text = "Highest Wave: 0"
+
+[node name="Upgrade Bought" type="Label" parent="LogPanel/Stats"]
+offset_left = 42.0
+offset_top = 290.0
+offset_right = 279.0
+offset_bottom = 325.0
+theme_override_font_sizes/font_size = 25
+text = "Upgrades Bought: 0"
+
+[node name="Coins Collected" type="Label" parent="LogPanel/Stats"]
+offset_left = 42.0
+offset_top = 330.0
+offset_right = 254.0
+offset_bottom = 365.0
+theme_override_font_sizes/font_size = 25
+text = "Coins Collected: 0"
+
+[node name="Time Played" type="Label" parent="LogPanel/Stats"]
+offset_left = 42.0
+offset_top = 210.0
+offset_right = 251.0
+offset_bottom = 245.0
+theme_override_font_sizes/font_size = 25
+text = "Time Played: 0:00"
+
+[node name="Bullets Fired" type="Label" parent="LogPanel/Stats"]
+offset_left = 42.0
+offset_top = 450.0
+offset_right = 220.0
+offset_bottom = 485.0
+theme_override_font_sizes/font_size = 25
+text = "Bullets Fired: 0"
+
+[node name="Attempts" type="Label" parent="LogPanel/Stats"]
+offset_left = 42.0
+offset_top = 170.0
+offset_right = 182.0
+offset_bottom = 205.0
+theme_override_font_sizes/font_size = 25
+text = "Attempts: 0"
+
+[node name="Enemies Defeated" type="Label" parent="LogPanel/Stats"]
+offset_left = 42.0
+offset_top = 250.0
+offset_right = 289.0
+offset_bottom = 285.0
+theme_override_font_sizes/font_size = 25
+text = "Enemies Defeated: 0"
+
+[node name="Achievements" type="Node2D" parent="LogPanel"]
+script = ExtResource("15_6wigr")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="LogPanel/Achievements"]
+offset_left = 16.0
+offset_top = 120.0
+offset_right = 416.0
+offset_bottom = 513.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="LogPanel/Achievements/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LogPanel/Achievements/ScrollContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Achievement 1" type="Panel" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(382, 100)
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 1"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 59.0
+offset_right = 367.0
+offset_bottom = 86.0
+max_value = 15.0
+show_percentage = false
+
+[node name="Task" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 1"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 10.0
+offset_right = 367.0
+offset_bottom = 56.0
+text = "Play for 15 Minutes"
+vertical_alignment = 2
+autowrap_mode = 3
+
+[node name="Progress" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 1"]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 61.0
+offset_right = 218.0
+offset_bottom = 84.0
+text = "0/15"
+
+[node name="Title" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 1"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 3.0
+offset_right = 208.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 25
+text = "First Orbit"
+vertical_alignment = 1
+
+[node name="Achievement 2" type="Panel" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(382, 100)
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 2"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 59.0
+offset_right = 367.0
+offset_bottom = 86.0
+max_value = 30.0
+show_percentage = false
+
+[node name="Task" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 2"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 10.0
+offset_right = 367.0
+offset_bottom = 56.0
+text = "Play for 30 Minutes"
+vertical_alignment = 2
+autowrap_mode = 3
+
+[node name="Progress" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 2"]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 61.0
+offset_right = 218.0
+offset_bottom = 84.0
+text = "0/30"
+
+[node name="Title" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 2"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 3.0
+offset_right = 298.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 25
+text = "Deep Space Transit"
+vertical_alignment = 1
+
+[node name="Achievement 3" type="Panel" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(382, 100)
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 3"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 59.0
+offset_right = 367.0
+offset_bottom = 86.0
+max_value = 60.0
+show_percentage = false
+
+[node name="Task" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 3"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 10.0
+offset_right = 367.0
+offset_bottom = 56.0
+text = "Play for 60 Minutes"
+vertical_alignment = 2
+autowrap_mode = 3
+
+[node name="Progress" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 3"]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 61.0
+offset_right = 218.0
+offset_bottom = 84.0
+text = "0/60"
+
+[node name="Title" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 3"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 3.0
+offset_right = 208.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 25
+text = "Time Flies"
+vertical_alignment = 1
+
+[node name="Achievement 4" type="Panel" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(382, 100)
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 4"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 59.0
+offset_right = 367.0
+offset_bottom = 86.0
+max_value = 5.0
+show_percentage = false
+
+[node name="Task" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 4"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 10.0
+offset_right = 367.0
+offset_bottom = 56.0
+text = "Reach Wave 5"
+vertical_alignment = 2
+autowrap_mode = 3
+
+[node name="Progress" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 4"]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 61.0
+offset_right = 218.0
+offset_bottom = 84.0
+text = "0/5"
+
+[node name="Title" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 4"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 3.0
+offset_right = 325.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 25
+text = "Atmosphere Cleared"
+vertical_alignment = 1
+
+[node name="Achievement 5" type="Panel" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(382, 100)
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 5"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 59.0
+offset_right = 367.0
+offset_bottom = 86.0
+max_value = 15.0
+show_percentage = false
+
+[node name="Task" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 5"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 10.0
+offset_right = 367.0
+offset_bottom = 56.0
+text = "Reach Wave 15"
+vertical_alignment = 2
+autowrap_mode = 3
+
+[node name="Progress" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 5"]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 61.0
+offset_right = 218.0
+offset_bottom = 84.0
+text = "0/15"
+
+[node name="Title" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 5"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 3.0
+offset_right = 279.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 25
+text = "Flight Lieutenant"
+vertical_alignment = 1
+
+[node name="Achievement 6" type="Panel" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(382, 100)
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 6"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 59.0
+offset_right = 367.0
+offset_bottom = 86.0
+max_value = 30.0
+show_percentage = false
+
+[node name="Task" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 6"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 10.0
+offset_right = 367.0
+offset_bottom = 56.0
+text = "Reach Wave 30"
+vertical_alignment = 2
+autowrap_mode = 3
+
+[node name="Progress" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 6"]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 61.0
+offset_right = 218.0
+offset_bottom = 84.0
+text = "0/30"
+
+[node name="Title" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 6"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 3.0
+offset_right = 271.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 25
+text = "Squadron Leader"
+vertical_alignment = 1
+
+[node name="Achievement 7" type="Panel" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(382, 100)
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 7"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 59.0
+offset_right = 367.0
+offset_bottom = 86.0
+max_value = 50.0
+show_percentage = false
+
+[node name="Task" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 7"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 10.0
+offset_right = 367.0
+offset_bottom = 56.0
+text = "Reach Wave 50"
+vertical_alignment = 2
+autowrap_mode = 3
+
+[node name="Progress" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 7"]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 61.0
+offset_right = 218.0
+offset_bottom = 84.0
+text = "0/50"
+
+[node name="Title" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 7"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 3.0
+offset_right = 251.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 25
+text = "Cosmic Anomaly"
+vertical_alignment = 1
+
+[node name="Achievement 8" type="Panel" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(382, 100)
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 8"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 59.0
+offset_right = 367.0
+offset_bottom = 86.0
+max_value = 1000.0
+show_percentage = false
+
+[node name="Task" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 8"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 11.0
+offset_right = 368.0
+offset_bottom = 57.0
+text = "Kill 1000 Enemies"
+vertical_alignment = 2
+autowrap_mode = 3
+
+[node name="Progress" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 8"]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 61.0
+offset_right = 218.0
+offset_bottom = 84.0
+text = "0/1000"
+
+[node name="Title" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 8"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 3.0
+offset_right = 279.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 25
+text = "Just Getting Warm"
+vertical_alignment = 1
+
+[node name="Achievement 11" type="Panel" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(382, 100)
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 11"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 59.0
+offset_right = 367.0
+offset_bottom = 86.0
+max_value = 2500.0
+show_percentage = false
+
+[node name="Task" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 11"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 11.0
+offset_right = 368.0
+offset_bottom = 57.0
+text = "Kill 2500 Enemies"
+vertical_alignment = 2
+autowrap_mode = 3
+
+[node name="Progress" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 11"]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 61.0
+offset_right = 218.0
+offset_bottom = 84.0
+text = "0/2500"
+
+[node name="Title" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 11"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 3.0
+offset_right = 279.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 25
+text = "Absolute Monster"
+vertical_alignment = 1
+
+[node name="Achievement 12" type="Panel" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(382, 100)
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 12"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 59.0
+offset_right = 367.0
+offset_bottom = 86.0
+max_value = 5000.0
+show_percentage = false
+
+[node name="Task" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 12"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 11.0
+offset_right = 368.0
+offset_bottom = 57.0
+text = "Kill 5000 Enemies"
+vertical_alignment = 2
+autowrap_mode = 3
+
+[node name="Progress" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 12"]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 61.0
+offset_right = 218.0
+offset_bottom = 84.0
+text = "0/5000"
+
+[node name="Title" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 12"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 3.0
+offset_right = 279.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 25
+text = "wow... warm yet?"
+vertical_alignment = 1
+
+[node name="Achievement 9" type="Panel" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(382, 100)
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 9"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 59.0
+offset_right = 367.0
+offset_bottom = 86.0
+max_value = 50.0
+show_percentage = false
+
+[node name="Task" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 9"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 11.0
+offset_right = 368.0
+offset_bottom = 57.0
+text = "Die 50 Times"
+vertical_alignment = 2
+autowrap_mode = 3
+
+[node name="Progress" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 9"]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 61.0
+offset_right = 218.0
+offset_bottom = 84.0
+text = "0/50"
+
+[node name="Title" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 9"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 3.0
+offset_right = 209.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 25
+text = "Determined I"
+vertical_alignment = 1
+
+[node name="Achievement 10" type="Panel" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(382, 100)
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 10"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 59.0
+offset_right = 367.0
+offset_bottom = 86.0
+show_percentage = false
+
+[node name="Task" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 10"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 11.0
+offset_right = 368.0
+offset_bottom = 57.0
+text = "Die 100 Times"
+vertical_alignment = 2
+autowrap_mode = 3
+
+[node name="Progress" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 10"]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 61.0
+offset_right = 218.0
+offset_bottom = 84.0
+text = "0/100"
+
+[node name="Title" type="Label" parent="LogPanel/Achievements/ScrollContainer/MarginContainer/VBoxContainer/Achievement 10"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 3.0
+offset_right = 209.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 25
+text = "Determined II"
+vertical_alignment = 1
+
+[node name="Enemies" type="Node2D" parent="LogPanel"]
+visible = false
+
+[node name="ScrollContainer" type="ScrollContainer" parent="LogPanel/Enemies"]
+custom_minimum_size = Vector2(50, 0)
+offset_left = 16.0
+offset_top = 120.0
+offset_right = 416.0
+offset_bottom = 513.0
+horizontal_scroll_mode = 0
+
+[node name="Margin container" type="MarginContainer" parent="LogPanel/Enemies/ScrollContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LogPanel/Enemies/ScrollContainer/Margin container"]
+layout_mode = 2
+
+[node name="Basic" type="Panel" parent="LogPanel/Enemies/ScrollContainer/Margin container/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Image" type="Sprite2D" parent="LogPanel/Enemies/ScrollContainer/Margin container/VBoxContainer/Basic"]
+position = Vector2(55, 48)
+scale = Vector2(0.204042, 0.208955)
+texture = ExtResource("15_7jp70")
+
+[node name="Body" type="Label" parent="LogPanel/Enemies/ScrollContainer/Margin container/VBoxContainer/Basic"]
+layout_mode = 0
+offset_left = 102.0
+offset_right = 378.0
+offset_bottom = 99.0
+text = "The Basic enemy has 2 hp moves at a speed of 250, and has no abilities. Starts wave 1."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Diver" type="Panel" parent="LogPanel/Enemies/ScrollContainer/Margin container/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Image" type="Sprite2D" parent="LogPanel/Enemies/ScrollContainer/Margin container/VBoxContainer/Diver"]
+position = Vector2(55, 52)
+scale = Vector2(0.23572, 0.241396)
+texture = ExtResource("16_mxgkd")
+
+[node name="Body" type="Label" parent="LogPanel/Enemies/ScrollContainer/Margin container/VBoxContainer/Diver"]
+layout_mode = 0
+offset_left = 106.0
+offset_right = 378.0
+offset_bottom = 99.0
+text = "The Diver enemy has 1 hp moves at a speed of 400, and has no abilities. Starts wave 1."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Asteroid" type="Panel" parent="LogPanel/Enemies/ScrollContainer/Margin container/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Image" type="Sprite2D" parent="LogPanel/Enemies/ScrollContainer/Margin container/VBoxContainer/Asteroid"]
+position = Vector2(55, 52)
+scale = Vector2(0.23572, 0.241396)
+texture = ExtResource("17_fy8yy")
+
+[node name="Body" type="Label" parent="LogPanel/Enemies/ScrollContainer/Margin container/VBoxContainer/Asteroid"]
+layout_mode = 0
+offset_left = 106.0
+offset_right = 378.0
+offset_bottom = 99.0
+text = "The Asteroid enemy has 10 hp moves at a speed of 100, and has no abilities. Starts wave 1."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Shooter" type="Panel" parent="LogPanel/Enemies/ScrollContainer/Margin container/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Image" type="Sprite2D" parent="LogPanel/Enemies/ScrollContainer/Margin container/VBoxContainer/Shooter"]
+position = Vector2(51.9336, 54)
+scale = Vector2(0.678842, 0.695187)
+texture = ExtResource("17_g6gyw")
+
+[node name="Body" type="Label" parent="LogPanel/Enemies/ScrollContainer/Margin container/VBoxContainer/Shooter"]
+layout_mode = 0
+offset_left = 109.0
+offset_right = 377.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 16
+text = "The Shooter enemy has 2 hp moves at a speed of 250, and shoots 1 laser. Starts wave 2."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Diving Shooter" type="Panel" parent="LogPanel/Enemies/ScrollContainer/Margin container/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Image" type="Sprite2D" parent="LogPanel/Enemies/ScrollContainer/Margin container/VBoxContainer/Diving Shooter"]
+position = Vector2(58, 51)
+scale = Vector2(0.269377, 0.275864)
+texture = ExtResource("18_3dmrc")
+
+[node name="Body" type="Label" parent="LogPanel/Enemies/ScrollContainer/Margin container/VBoxContainer/Diving Shooter"]
+layout_mode = 0
+offset_left = 109.0
+offset_right = 377.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 16
+text = "The Diving Shooter enemy has 1 hp moves at a speed of 400, and shoots 1 laser. Starts wave 3."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Tank" type="Panel" parent="LogPanel/Enemies/ScrollContainer/Margin container/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Image" type="Sprite2D" parent="LogPanel/Enemies/ScrollContainer/Margin container/VBoxContainer/Tank"]
+position = Vector2(57.2469, 49)
+scale = Vector2(0.347505, 0.355872)
+texture = ExtResource("19_81l6r")
+
+[node name="Body" type="Label" parent="LogPanel/Enemies/ScrollContainer/Margin container/VBoxContainer/Tank"]
+layout_mode = 0
+offset_left = 109.0
+offset_right = 377.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 16
+text = "The Tank enemy has 5 hp moves at a speed of 150, and shoots 1 laser. Starts wave 5."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Suicider" type="Panel" parent="LogPanel/Enemies/ScrollContainer/Margin container/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Image" type="Sprite2D" parent="LogPanel/Enemies/ScrollContainer/Margin container/VBoxContainer/Suicider"]
+position = Vector2(56.7727, 49.5)
+scale = Vector2(0.541897, 0.554945)
+texture = ExtResource("20_rsfmq")
+
+[node name="Body" type="Label" parent="LogPanel/Enemies/ScrollContainer/Margin container/VBoxContainer/Suicider"]
+layout_mode = 0
+offset_left = 109.0
+offset_right = 377.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 16
+text = "The Suicider enemy has 2 hp moves at a speed of 400, and targets the player. Starts wave 10."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Bomber" type="Panel" parent="LogPanel/Enemies/ScrollContainer/Margin container/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Image" type="Sprite2D" parent="LogPanel/Enemies/ScrollContainer/Margin container/VBoxContainer/Bomber"]
+position = Vector2(58.5355, 54.4411)
+scale = Vector2(0.355166, 0.363718)
+texture = ExtResource("21_oi1it")
+
+[node name="Body" type="Label" parent="LogPanel/Enemies/ScrollContainer/Margin container/VBoxContainer/Bomber"]
+layout_mode = 0
+offset_left = 106.0
+offset_top = -1.0
+offset_right = 376.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 16
+text = "The Bomber enemy has 4 hp moves at a speed of 250, and drops bombs which explode after 3 seconds. Starts wave 15."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Enemies Button" type="Button" parent="LogPanel"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 9.0
+offset_right = 146.0
+offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lnf0i")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7jp70")
+text = "Enemies"
+
+[node name="Achievements Button" type="Button" parent="LogPanel"]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 9.0
+offset_right = 285.0
+offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ffqrc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6gyw")
+text = "Achievements"
+
+[node name="Statistics Button" type="Button" parent="LogPanel"]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 9.0
+offset_right = 424.0
+offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x16fv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3dmrc")
+text = "Statistics"
+
+[node name="Tips" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 839.0
+offset_right = 539.0
+offset_bottom = 958.0
+theme_override_font_sizes/font_size = 20
+text = "Don't like your keybinds?
+You can change them in settings."
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("25_ffqrc")
+
+[node name="TipTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="Brief Menu Tutorial" type="Node2D" parent="."]
+visible = false
+script = ExtResource("24_ffqrc")
+
+[node name="ColorRect" type="ColorRect" parent="Brief Menu Tutorial"]
+offset_left = -31.0
+offset_top = -17.0
+offset_right = 556.0
+offset_bottom = 975.0
+color = Color(0, 0, 0, 0.572549)
+
+[node name="Space Guy" type="Sprite2D" parent="Brief Menu Tutorial"]
+position = Vector2(99, 781)
+scale = Vector2(0.484576, 0.484576)
+texture = ExtResource("24_lnf0i")
+script = ExtResource("26_x16fv")
+
+[node name="Label" type="Label" parent="Brief Menu Tutorial"]
+offset_left = 196.0
+offset_top = 688.0
+offset_right = 482.0
+offset_bottom = 837.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 20
+text = "Welcome to Void Strike!
+
+(CLICK TO CONTINUE)
+"
+visible_characters = 0
+visible_ratio = 0.0
+
+[connection signal="mouse_entered" from="Play" to="." method="_on_play_mouse_entered"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Play" to="LogPanel" method="_on_play_pressed"]
+[connection signal="mouse_entered" from="NotesPanel/Exit notes" to="Notes" method="_on_exit_notes_mouse_entered"]
+[connection signal="pressed" from="NotesPanel/Exit notes" to="Notes" method="_on_exit_notes_pressed"]
+[connection signal="mouse_entered" from="Settings" to="Settings" method="_on_mouse_entered"]
+[connection signal="pressed" from="Settings" to="Settings" method="_on_pressed"]
+[connection signal="mouse_entered" from="Notes" to="Notes" method="_on_mouse_entered"]
+[connection signal="pressed" from="Notes" to="Notes" method="_on_pressed"]
+[connection signal="mouse_entered" from="Log" to="Log" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Log" to="LogPanel" method="_on_log_mouse_entered"]
+[connection signal="pressed" from="Log" to="Log" method="_on_pressed"]
+[connection signal="pressed" from="Log" to="LogPanel" method="_on_log_pressed"]
+[connection signal="toggled" from="SettingsPanel/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="toggled" from="SettingsPanel/CheckButton2" to="." method="_on_check_button_2_toggled"]
+[connection signal="mouse_entered" from="SettingsPanel/Exit" to="Settings" method="_on_button_mouse_entered"]
+[connection signal="pressed" from="SettingsPanel/Exit" to="Settings" method="_on_button_pressed"]
+[connection signal="pressed" from="SettingsPanel/KeyBinds/Shoot" to="SettingsPanel/KeyBinds" method="_on_shoot_pressed"]
+[connection signal="pressed" from="SettingsPanel/KeyBinds/Right" to="SettingsPanel/KeyBinds" method="_on_right_pressed"]
+[connection signal="pressed" from="SettingsPanel/KeyBinds/Left" to="SettingsPanel/KeyBinds" method="_on_left_pressed"]
+[connection signal="pressed" from="SettingsPanel/KeyBinds/Down" to="SettingsPanel/KeyBinds" method="_on_down_pressed"]
+[connection signal="pressed" from="SettingsPanel/KeyBinds/Up" to="SettingsPanel/KeyBinds" method="_on_up_pressed"]
+[connection signal="pressed" from="SettingsPanel/KeyBinds/Boost" to="SettingsPanel/KeyBinds" method="_on_boost_pressed"]
+[connection signal="pressed" from="SettingsPanel/KeyBinds/ResetGame" to="SettingsPanel/KeyBinds" method="_on_reset_game_pressed"]
+[connection signal="pressed" from="SettingsPanel/KeyBinds/Reset" to="SettingsPanel/KeyBinds" method="_on_reset_pressed"]
+[connection signal="send_time" from="LogPanel" to="LogPanel/Achievements" method="_on_log_panel_send_time"]
+[connection signal="mouse_entered" from="LogPanel/Exit" to="LogPanel" method="_on_exit_mouse_entered"]
+[connection signal="pressed" from="LogPanel/Exit" to="LogPanel" method="_on_exit_pressed"]
+[connection signal="mouse_entered" from="LogPanel/Enemies Button" to="LogPanel" method="_on_enemies_button_mouse_entered"]
+[connection signal="pressed" from="LogPanel/Enemies Button" to="LogPanel" method="_on_enemies_button_pressed"]
+[connection signal="mouse_entered" from="LogPanel/Achievements Button" to="LogPanel" method="_on_achievements_button_mouse_entered"]
+[connection signal="pressed" from="LogPanel/Achievements Button" to="LogPanel" method="_on_achievements_button_pressed"]
+[connection signal="mouse_entered" from="LogPanel/Statistics Button" to="LogPanel" method="_on_statistics_button_mouse_entered"]
+[connection signal="pressed" from="LogPanel/Statistics Button" to="LogPanel" method="_on_statistics_button_pressed"]
+[connection signal="timeout" from="TipTimer" to="Tips" method="_on_tip_timer_timeout"]

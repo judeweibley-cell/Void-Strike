@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://p7txfjwujfvm"]
+
+[ext_resource type="Texture2D" uid="uid://dlo5bbsjr4pwr" path="res://assets/Screenshot_2026-09-24_202454-removebg-preview.png" id="1_d21rm"]
+[ext_resource type="Script" uid="uid://cdvgcnfbts6lo" path="res://scenes/space_junk.gd" id="1_fuxf4"]
+[ext_resource type="Texture2D" uid="uid://cfmd7xhrbvfpn" path="res://assets/Screenshot_2026-09-24_202323-removebg-preview.png" id="2_fuxf4"]
+[ext_resource type="Texture2D" uid="uid://df45f21hkexfc" path="res://assets/Screenshot_2026-09-24_202619-removebg-preview.png" id="3_wcyvx"]
+
+[node name="Space Junk" type="Node2D"]
+script = ExtResource("1_fuxf4")
+
+[node name="Small satelltite" type="Area2D" parent="."]
+scale = Vector2(0.3, 0.3)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Small satelltite"]
+polygon = PackedVector2Array(-170, -36.6667, -46.6667, -36.6667, -33.3333, -23.3333, -23.3333, -23.3333, -16.6667, -33.3333, 6.66666, -40, 30, -30, 36.6667, -23.3333, 46.6667, -23.3333, 63.3333, -33.3333, 186.667, -33.3333, 183.333, 43.3333, 56.6667, 43.3333, 46.6667, 30, 36.6667, 30, 30, 36.6667, 6.66666, 43.3333, -16.6667, 36.6667, -23.3333, 26.6667, -36.6667, 26.6667, -46.6667, 40, -173.333, 40)
+
+[node name="Sprite2D" type="Sprite2D" parent="Small satelltite"]
+texture = ExtResource("1_d21rm")
+
+[node name="Large satellite" type="Area2D" parent="."]
+scale = Vector2(0.3, 0.3)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Large satellite"]
+position = Vector2(240, -173.333)
+polygon = PackedVector2Array(-150, -63.3333, -30, -60, -20, -46.6667, -23.3333, -26.6667, -13.3333, -26.6667, -13.3333, -43.3333, 6.66675, -60, 23.3334, -60, 40, -40, 36.6667, -26.6667, 46.6667, -26.6667, 50, -46.6667, 63.3334, -60, 176.667, -60, 163.333, 83.3333, 46.6667, 80, 36.6667, 70, 40, 46.6667, 30, 46.6667, 30, 60, -23.3333, 56.6667, -20, 46.6667, -30, 46.6667, -33.3333, 70, -50, 83.3333, -163.333, 83.3333)
+
+[node name="Sprite2D" type="Sprite2D" parent="Large satellite"]
+position = Vector2(240, -173.333)
+texture = ExtResource("2_fuxf4")
+
+[node name="Scrap" type="Area2D" parent="."]
+position = Vector2(1, -55)
+scale = Vector2(0.3, 0.3)
+
+[node name="Sprite2D" type="Sprite2D" parent="Scrap"]
+texture = ExtResource("3_wcyvx")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Scrap"]
+visible = false
+position = Vector2(2.86102e-06, 0)
+polygon = PackedVector2Array(-46.6666, 30, -46.6666, -26.6667, -33.3333, -53.3333, 10, -53.3333, 13.3334, -43.3333, 30, -43.3333, 33.3334, -53.3333, 46.6667, -56.6667, 56.6667, -36.6667, 56.6667, 36.6667, 50, 56.6667, 33.3334, 56.6667, 30, 43.3333, 13.3334, 43.3333, 10, 53.3333, -33.3333, 53.3333)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+
+[connection signal="body_entered" from="Small satelltite" to="." method="_on_small_satelltite_body_entered"]
+[connection signal="body_entered" from="Large satellite" to="." method="_on_large_satellite_body_entered"]
+[connection signal="body_entered" from="Scrap" to="." method="_on_scrap_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

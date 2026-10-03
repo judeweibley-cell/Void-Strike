@@ -1,0 +1,637 @@
+[gd_scene load_steps=35 format=3 uid="uid://d0eqqds5ayb7t"]
+
+[ext_resource type="Script" uid="uid://btfvc7ual3hxh" path="res://scripts/menu.gd" id="1_mhnvy"]
+[ext_resource type="Texture2D" uid="uid://s36hf6u73lwh" path="res://Background.png" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://ggd3i34bg4mq" path="res://assets/Screenshot_2026-06-03_191327-removebg-preview.png" id="2_con2f"]
+[ext_resource type="FontFile" uid="uid://ct04e3ohjsinm" path="res://fonts/Kenney Future Narrow.ttf" id="3_mhnvy"]
+[ext_resource type="Script" uid="uid://cmr23k6k0bc1i" path="res://scripts/sprite_2d.gd" id="4_4ytvr"]
+[ext_resource type="Texture2D" uid="uid://du4vnxm4cyy2m" path="res://assets/Screenshot_2026-08-11_215035-removebg-preview.png" id="5_i42df"]
+[ext_resource type="Script" uid="uid://dmk01bdp83tol" path="res://scripts/Settings.gd" id="7_i6lef"]
+[ext_resource type="Script" uid="uid://dr014ewgxh8uu" path="res://scripts/check_button.gd" id="7_v86rl"]
+[ext_resource type="Script" uid="uid://b3f8qsml6cx3m" path="res://scripts/check_button_2.gd" id="8_13sgg"]
+[ext_resource type="Script" uid="uid://b4vwlsbilpp0f" path="res://scripts/leaderboard.gd" id="8_70i5f"]
+[ext_resource type="Script" uid="uid://cc3ghsegixfhc" path="res://scripts/#1.gd" id="10_ufwb2"]
+[ext_resource type="Script" uid="uid://b0gdeojebr3fh" path="res://scenes/key_binds.gd" id="12_6cdou"]
+[ext_resource type="Script" uid="uid://ckj8jamk1o134" path="res://scenes/log_panel.gd" id="14_7jp70"]
+[ext_resource type="AudioStream" uid="uid://dmypgg431s63d" path="res://sounds/Click button (16 sound effects).mp3.wav" id="14_i42df"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vjb58"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(270, 1, 1)
+direction = Vector3(0, -1, 0)
+spread = 0.0
+initial_velocity_min = -1000.0
+initial_velocity_max = -1000.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="Curve" id="Curve_mxgkd"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_suyxu"]
+width = 4096
+curve = SubResource("Curve_mxgkd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_g6gyw"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+angle_min = -720.0
+angle_max = 720.0
+direction = Vector3(-1, 0, 0)
+spread = 180.0
+initial_velocity_min = 1000.0
+initial_velocity_max = 1000.0
+gravity = Vector3(0, 98, 0)
+scale_min = 0.2
+scale_max = 0.25
+scale_curve = SubResource("CurveTexture_suyxu")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ufwb2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3eks"]
+bg_color = Color(0.117647, 0.537255, 0.815686, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i42df"]
+bg_color = Color(0.105882, 0.27451, 0.384314, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6cdou"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i42df"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7jp70"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6lef"]
+bg_color = Color(0.117647, 0.537255, 0.815686, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mxgkd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g6gyw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3dmrc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_81l6r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rsfmq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oi1it"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fy8yy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6wigr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mxgkd"]
+bg_color = Color(0.117647, 0.537255, 0.815686, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mhnvy")
+metadata/_edit_vertical_guides_ = [-554.0]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(0, 960)
+
+[node name="PurpleStars" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+texture = ExtResource("1_yqeox")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 540, 960)
+
+[node name="StarParticleEffect" type="GPUParticles2D" parent="."]
+position = Vector2(270, -50)
+scale = Vector2(0.921367, 1.99851)
+amount = 20
+preprocess = 5.0
+collision_base_size = 128.0
+trail_lifetime = 1.25
+process_material = SubResource("ParticleProcessMaterial_vjb58")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(260, 800)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_con2f")
+script = ExtResource("4_4ytvr")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Sprite2D"]
+position = Vector2(-75, 125)
+scale = Vector2(0.2, 0.2)
+amount = 7
+texture = ExtResource("5_i42df")
+lifetime = 0.1
+process_material = SubResource("ParticleProcessMaterial_g6gyw")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="Sprite2D"]
+position = Vector2(80, 125)
+scale = Vector2(0.2, 0.2)
+amount = 7
+texture = ExtResource("5_i42df")
+lifetime = 0.1
+process_material = SubResource("ParticleProcessMaterial_g6gyw")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 34.0
+offset_right = 480.0
+offset_bottom = 105.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 62
+text = "VOID STRIKE"
+horizontal_alignment = 1
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -209.0
+offset_top = -280.0
+offset_right = 208.0
+offset_bottom = -225.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ufwb2")
+text = "Play"
+
+[node name="NotesPanel" type="Panel" parent="."]
+visible = false
+top_level = true
+layout_mode = 0
+offset_left = 62.0
+offset_top = 115.0
+offset_right = 478.0
+offset_bottom = 731.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g3eks")
+
+[node name="Label" type="Label" parent="NotesPanel"]
+layout_mode = 0
+offset_left = 5.0
+offset_right = 399.0
+offset_bottom = 105.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 40
+text = "Notes:"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("10_ufwb2")
+
+[node name="LinkButton" type="LinkButton" parent="NotesPanel"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 478.0
+offset_right = 349.0
+offset_bottom = 518.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 30
+text = "Join the Discord!"
+underline = 1
+uri = "https://discord.gg/ccgyRZArYm"
+
+[node name="Panel" type="Panel" parent="NotesPanel"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 86.0
+offset_right = 382.0
+offset_bottom = 455.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_i42df")
+
+[node name="Label2" type="Label" parent="NotesPanel"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 91.0
+offset_right = 380.0
+offset_bottom = 457.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 20
+text = "Void Strike was first created on May 31 2026 as a summer project to try and learn Godot for the Hack Club Stardance Challenge in order to try and win a 3D printer. For anyone Rating my project please consider that before this I had absolutely no idea how to use Godot, and that this is my first project ever. Thank You!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Exit notes" type="Button" parent="NotesPanel"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 531.0
+offset_right = 382.0
+offset_bottom = 588.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6cdou")
+text = "EXIT"
+
+[node name="Settings" type="Button" parent="."]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 349.0
+offset_right = 478.0
+offset_bottom = 404.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i42df")
+text = "Settings"
+script = ExtResource("7_i6lef")
+
+[node name="Notes" type="Button" parent="."]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 423.0
+offset_right = 478.0
+offset_bottom = 477.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7jp70")
+text = "Notes"
+script = ExtResource("8_70i5f")
+
+[node name="Log" type="Button" parent="."]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 274.0
+offset_right = 478.0
+offset_bottom = 328.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7jp70")
+text = "Log"
+
+[node name="SettingsPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 59.0
+offset_top = 115.0
+offset_right = 490.0
+offset_bottom = 731.0
+pivot_offset = Vector2(-40, 180)
+theme_override_styles/panel = SubResource("StyleBoxFlat_g3eks")
+
+[node name="Panel2" type="Panel" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 319.0
+offset_right = 410.0
+offset_bottom = 527.0
+
+[node name="Panel" type="Panel" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 108.0
+offset_right = 410.0
+offset_bottom = 229.0
+
+[node name="Settings" type="Label" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 5.0
+offset_right = 396.0
+offset_bottom = 110.0
+scale = Vector2(1, 0.995939)
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 55
+text = " Settings:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CheckButton" type="CheckButton" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 107.0
+offset_right = 274.0
+offset_bottom = 144.0
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/focus = SubResource("StyleBoxFlat_i6lef")
+text = "Music"
+script = ExtResource("7_v86rl")
+
+[node name="CheckButton2" type="CheckButton" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 171.0
+offset_right = 276.0
+offset_bottom = 208.0
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/focus = SubResource("StyleBoxFlat_i6lef")
+text = "sound EFFECTS"
+script = ExtResource("8_13sgg")
+
+[node name="Controls" type="Label" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 245.0
+offset_right = 403.0
+offset_bottom = 308.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 55
+text = "CONTROLS:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Exit" type="Button" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 539.0
+offset_right = 372.0
+offset_bottom = 595.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mxgkd")
+text = "Exit"
+
+[node name="KeyBinds" type="Node2D" parent="SettingsPanel"]
+script = ExtResource("12_6cdou")
+
+[node name="Shoot" type="Button" parent="SettingsPanel/KeyBinds"]
+offset_left = 295.0
+offset_top = 381.0
+offset_right = 349.0
+offset_bottom = 421.0
+scale = Vector2(1.2, 1.2)
+focus_mode = 1
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g6gyw")
+text = "Space"
+
+[node name="Label" type="Label" parent="SettingsPanel/KeyBinds/Shoot"]
+layout_mode = 0
+offset_left = -102.333
+offset_right = 41.6667
+offset_bottom = 40.0
+text = "Shoot"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Right" type="Button" parent="SettingsPanel/KeyBinds"]
+offset_left = 149.0
+offset_top = 440.0
+offset_right = 189.0
+offset_bottom = 480.0
+scale = Vector2(1.2, 1.2)
+focus_mode = 1
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3dmrc")
+text = "D"
+
+[node name="Label" type="Label" parent="SettingsPanel/KeyBinds/Right"]
+layout_mode = 0
+offset_left = -1.52588e-05
+offset_top = -27.0
+offset_right = 41.0
+offset_bottom = 23.0
+text = "Right"
+
+[node name="Left" type="Button" parent="SettingsPanel/KeyBinds"]
+offset_left = 33.0
+offset_top = 440.0
+offset_right = 73.0
+offset_bottom = 480.0
+scale = Vector2(1.2, 1.2)
+focus_mode = 1
+theme_override_styles/focus = SubResource("StyleBoxEmpty_81l6r")
+text = "A"
+
+[node name="Label" type="Label" parent="SettingsPanel/KeyBinds/Left"]
+layout_mode = 0
+offset_left = 4.16667
+offset_top = -23.0
+offset_right = 44.1667
+offset_bottom = 23.0
+text = "Left"
+
+[node name="Down" type="Button" parent="SettingsPanel/KeyBinds"]
+offset_left = 91.0
+offset_top = 440.0
+offset_right = 131.0
+offset_bottom = 480.0
+scale = Vector2(1.2, 1.2)
+focus_mode = 1
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rsfmq")
+text = "S"
+
+[node name="Label" type="Label" parent="SettingsPanel/KeyBinds/Down"]
+layout_mode = 0
+offset_left = -3.33333
+offset_top = 41.3337
+offset_right = 41.6667
+offset_bottom = 64.3337
+text = "Down"
+
+[node name="Up" type="Button" parent="SettingsPanel/KeyBinds"]
+offset_left = 91.0
+offset_top = 382.0
+offset_right = 131.0
+offset_bottom = 422.0
+scale = Vector2(1.2, 1.2)
+focus_mode = 1
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oi1it")
+text = "W"
+
+[node name="Label" type="Label" parent="SettingsPanel/KeyBinds/Up"]
+layout_mode = 0
+offset_top = -26.0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Up"
+horizontal_alignment = 1
+
+[node name="Boost" type="Button" parent="SettingsPanel/KeyBinds"]
+offset_left = 295.0
+offset_top = 440.0
+offset_right = 339.0
+offset_bottom = 480.0
+scale = Vector2(1.2, 1.2)
+focus_mode = 1
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fy8yy")
+text = "Shift"
+
+[node name="Label" type="Label" parent="SettingsPanel/KeyBinds/Boost"]
+layout_mode = 0
+offset_left = -102.333
+offset_right = 41.6667
+offset_bottom = 40.0
+text = "Boost"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Reset" type="Button" parent="SettingsPanel/KeyBinds"]
+offset_left = 295.0
+offset_top = 334.0
+offset_right = 346.0
+offset_bottom = 365.0
+scale = Vector2(1.2, 1.2)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6wigr")
+text = "Reset"
+
+[node name="ClickSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_i42df")
+
+[node name="LogPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 115.0
+offset_right = 490.0
+offset_bottom = 731.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mxgkd")
+script = ExtResource("14_7jp70")
+
+[node name="Exit" type="Button" parent="LogPanel"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 536.0
+offset_right = 406.0
+offset_bottom = 591.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 40
+text = "Exit"
+
+[node name="Label" type="Label" parent="LogPanel"]
+layout_mode = 0
+offset_right = 431.0
+offset_bottom = 93.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 55
+text = "Log"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Enemies Defeated" type="Label" parent="LogPanel"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 92.0
+offset_right = 268.0
+offset_bottom = 127.0
+theme_override_font_sizes/font_size = 25
+text = "Enemies Defeated: 0"
+
+[node name="Attempts" type="Label" parent="LogPanel"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 131.0
+offset_right = 269.0
+offset_bottom = 192.0
+theme_override_font_sizes/font_size = 25
+text = "Attempts: 0"
+
+[node name="Bullets Fired" type="Label" parent="LogPanel"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 175.0
+offset_right = 199.0
+offset_bottom = 210.0
+theme_override_font_sizes/font_size = 25
+text = "Bullets Fired: 0"
+
+[node name="Time Played" type="Label" parent="LogPanel"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 216.0
+offset_right = 230.0
+offset_bottom = 251.0
+theme_override_font_sizes/font_size = 25
+text = "Time Played: 0:00"
+
+[node name="Coins Collected" type="Label" parent="LogPanel"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 256.0
+offset_right = 230.0
+offset_bottom = 291.0
+theme_override_font_sizes/font_size = 25
+text = "Coins Collected: 0"
+
+[node name="Coins Spent" type="Label" parent="LogPanel"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 298.0
+offset_right = 233.0
+offset_bottom = 333.0
+theme_override_font_sizes/font_size = 25
+text = "Coins Spent: 0"
+
+[node name="Upgrade Bought" type="Label" parent="LogPanel"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 339.0
+offset_right = 233.0
+offset_bottom = 374.0
+theme_override_font_sizes/font_size = 25
+text = "Upgrades Bought: 0"
+
+[node name="Highest Wave" type="Label" parent="LogPanel"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 383.0
+offset_right = 233.0
+offset_bottom = 418.0
+theme_override_font_sizes/font_size = 25
+text = "Highest Wave: 0"
+
+[node name="Fuel Burned" type="Label" parent="LogPanel"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 421.0
+offset_right = 233.0
+offset_bottom = 456.0
+theme_override_font_sizes/font_size = 25
+text = "Fuel Burned: 0"
+
+[connection signal="mouse_entered" from="Play" to="." method="_on_play_mouse_entered"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Play" to="LogPanel" method="_on_play_pressed"]
+[connection signal="mouse_entered" from="NotesPanel/Exit notes" to="Notes" method="_on_exit_notes_mouse_entered"]
+[connection signal="pressed" from="NotesPanel/Exit notes" to="Notes" method="_on_exit_notes_pressed"]
+[connection signal="mouse_entered" from="Settings" to="Settings" method="_on_mouse_entered"]
+[connection signal="pressed" from="Settings" to="Settings" method="_on_pressed"]
+[connection signal="mouse_entered" from="Notes" to="Notes" method="_on_mouse_entered"]
+[connection signal="pressed" from="Notes" to="Notes" method="_on_pressed"]
+[connection signal="mouse_entered" from="Log" to="Log" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Log" to="LogPanel" method="_on_log_mouse_entered"]
+[connection signal="pressed" from="Log" to="Log" method="_on_pressed"]
+[connection signal="pressed" from="Log" to="LogPanel" method="_on_log_pressed"]
+[connection signal="toggled" from="SettingsPanel/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="toggled" from="SettingsPanel/CheckButton2" to="." method="_on_check_button_2_toggled"]
+[connection signal="mouse_entered" from="SettingsPanel/Exit" to="Settings" method="_on_button_mouse_entered"]
+[connection signal="pressed" from="SettingsPanel/Exit" to="Settings" method="_on_button_pressed"]
+[connection signal="pressed" from="SettingsPanel/KeyBinds/Shoot" to="SettingsPanel/KeyBinds" method="_on_shoot_pressed"]
+[connection signal="pressed" from="SettingsPanel/KeyBinds/Right" to="SettingsPanel/KeyBinds" method="_on_right_pressed"]
+[connection signal="pressed" from="SettingsPanel/KeyBinds/Left" to="SettingsPanel/KeyBinds" method="_on_left_pressed"]
+[connection signal="pressed" from="SettingsPanel/KeyBinds/Down" to="SettingsPanel/KeyBinds" method="_on_down_pressed"]
+[connection signal="pressed" from="SettingsPanel/KeyBinds/Up" to="SettingsPanel/KeyBinds" method="_on_up_pressed"]
+[connection signal="pressed" from="SettingsPanel/KeyBinds/Boost" to="SettingsPanel/KeyBinds" method="_on_boost_pressed"]
+[connection signal="pressed" from="SettingsPanel/KeyBinds/Reset" to="SettingsPanel/KeyBinds" method="_on_reset_pressed"]
+[connection signal="mouse_entered" from="LogPanel/Exit" to="LogPanel" method="_on_exit_mouse_entered"]
+[connection signal="pressed" from="LogPanel/Exit" to="LogPanel" method="_on_exit_pressed"]

@@ -1,0 +1,704 @@
+[gd_scene load_steps=23 format=3 uid="uid://d0eqqds5ayb7t"]
+
+[ext_resource type="Script" uid="uid://btfvc7ual3hxh" path="res://scripts/menu.gd" id="1_mhnvy"]
+[ext_resource type="Texture2D" uid="uid://s36hf6u73lwh" path="res://Background.png" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://ggd3i34bg4mq" path="res://assets/Screenshot_2026-06-03_191327-removebg-preview.png" id="2_con2f"]
+[ext_resource type="FontFile" uid="uid://ct04e3ohjsinm" path="res://fonts/Kenney Future Narrow.ttf" id="3_mhnvy"]
+[ext_resource type="Script" uid="uid://cmr23k6k0bc1i" path="res://scripts/sprite_2d.gd" id="4_4ytvr"]
+[ext_resource type="Script" uid="uid://dmk01bdp83tol" path="res://scripts/Settings.gd" id="7_i6lef"]
+[ext_resource type="Script" uid="uid://dr014ewgxh8uu" path="res://scripts/check_button.gd" id="7_v86rl"]
+[ext_resource type="Script" uid="uid://b3f8qsml6cx3m" path="res://scripts/check_button_2.gd" id="8_13sgg"]
+[ext_resource type="Script" uid="uid://b4vwlsbilpp0f" path="res://scripts/leaderboard.gd" id="8_70i5f"]
+[ext_resource type="Texture2D" uid="uid://kq3kuonclvad" path="res://assets/Screenshot_2026-07-31_115224-removebg-preview.png" id="8_mj5lg"]
+[ext_resource type="Texture2D" uid="uid://brielmo3xh23a" path="res://download__3_-removebg-preview.png" id="10_70i5f"]
+[ext_resource type="Script" uid="uid://cc3ghsegixfhc" path="res://scenes/#1.gd" id="10_ufwb2"]
+[ext_resource type="Script" uid="uid://dc7x1y4nhovxm" path="res://scenes/progress_bar.gd" id="13_6cdou"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vjb58"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(270, 1, 1)
+direction = Vector3(0, -1, 0)
+spread = 0.0
+initial_velocity_min = -1000.0
+initial_velocity_max = -1000.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13sgg"]
+bg_color = Color(0.0666667, 0.435294, 0.670588, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+expand_margin_left = 12.0
+expand_margin_top = 7.0
+expand_margin_right = 7.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhnvy"]
+bg_color = Color(0.0666667, 0.435294, 0.670588, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+expand_margin_left = 12.0
+expand_margin_top = 7.0
+expand_margin_right = 7.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v86rl"]
+bg_color = Color(0.0666667, 0.435294, 0.670588, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+expand_margin_left = 12.0
+expand_margin_top = 7.0
+expand_margin_right = 7.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ytvr"]
+bg_color = Color(0.0666667, 0.435294, 0.670588, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_70i5f"]
+bg_color = Color(0.0666667, 0.435294, 0.670588, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3eks"]
+bg_color = Color(0.117647, 0.537255, 0.815686, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6lef"]
+bg_color = Color(0.117647, 0.537255, 0.815686, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ufwb2"]
+bg_color = Color(0.0666667, 0.435294, 0.670588, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mhnvy")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(0, 960)
+
+[node name="PurpleStars" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+texture = ExtResource("1_yqeox")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 540, 960)
+
+[node name="StarParticleEffect" type="GPUParticles2D" parent="."]
+position = Vector2(270, -50)
+scale = Vector2(0.921367, 1.99851)
+amount = 20
+preprocess = 5.0
+collision_base_size = 128.0
+trail_lifetime = 1.25
+process_material = SubResource("ParticleProcessMaterial_vjb58")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(260, 821)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_con2f")
+script = ExtResource("4_4ytvr")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 34.0
+offset_right = 480.0
+offset_bottom = 105.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 62
+text = "VOID STRIKE"
+horizontal_alignment = 1
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = 428.0
+offset_right = 54.0
+offset_bottom = 483.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_13sgg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mhnvy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v86rl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4ytvr")
+text = "Play"
+
+[node name="Settings" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 891.0
+offset_right = 209.0
+offset_bottom = 971.0
+texture_normal = ExtResource("10_70i5f")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("7_i6lef")
+
+[node name="Panel" type="Panel" parent="Settings"]
+process_mode = 4
+show_behind_parent = true
+layout_mode = 0
+offset_left = 22.0
+offset_top = 11.0
+offset_right = 86.0
+offset_bottom = 78.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_70i5f")
+
+[node name="Leaderboard" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 335.0
+offset_top = 916.0
+offset_right = 398.0
+offset_bottom = 963.0
+texture_normal = ExtResource("8_mj5lg")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("8_70i5f")
+
+[node name="Panel" type="Panel" parent="Leaderboard"]
+process_mode = 4
+show_behind_parent = true
+layout_mode = 0
+offset_left = -2.0
+offset_top = -14.0
+offset_right = 62.0
+offset_bottom = 53.0
+scale = Vector2(1, 1.0029)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_70i5f")
+
+[node name="LeaderboardPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 71.0
+offset_top = 115.0
+offset_right = 472.0
+offset_bottom = 670.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g3eks")
+
+[node name="Label" type="Label" parent="LeaderboardPanel"]
+layout_mode = 0
+offset_left = 5.0
+offset_right = 399.0
+offset_bottom = 105.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 40
+text = "leaderboard:"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("10_ufwb2")
+
+[node name="1" type="Panel" parent="LeaderboardPanel"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 95.0
+offset_right = 371.0
+offset_bottom = 135.0
+
+[node name="Label" type="Label" parent="LeaderboardPanel/1"]
+layout_mode = 0
+offset_right = 342.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 35
+text = " 1. user(score)"
+
+[node name="2" type="Panel" parent="LeaderboardPanel"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 139.0
+offset_right = 371.0
+offset_bottom = 179.0
+
+[node name="Label" type="Label" parent="LeaderboardPanel/2"]
+layout_mode = 0
+offset_right = 342.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 35
+text = " 2. USER(SCORE)"
+
+[node name="3" type="Panel" parent="LeaderboardPanel"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 183.0
+offset_right = 371.0
+offset_bottom = 223.0
+
+[node name="Label" type="Label" parent="LeaderboardPanel/3"]
+layout_mode = 0
+offset_right = 342.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 35
+text = " 3. USER(SCORE)"
+
+[node name="4" type="Panel" parent="LeaderboardPanel"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 228.0
+offset_right = 371.0
+offset_bottom = 268.0
+
+[node name="Label" type="Label" parent="LeaderboardPanel/4"]
+layout_mode = 0
+offset_right = 342.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 35
+text = " 4. USER(SCORE)"
+
+[node name="5" type="Panel" parent="LeaderboardPanel"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 273.0
+offset_right = 371.0
+offset_bottom = 313.0
+
+[node name="Label" type="Label" parent="LeaderboardPanel/5"]
+layout_mode = 0
+offset_right = 342.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 35
+text = " 5. USER(SCORE)"
+
+[node name="6" type="Panel" parent="LeaderboardPanel"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 318.0
+offset_right = 371.0
+offset_bottom = 358.0
+
+[node name="Label" type="Label" parent="LeaderboardPanel/6"]
+layout_mode = 0
+offset_right = 342.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 35
+text = " 6. USER(SCORE)"
+
+[node name="7" type="Panel" parent="LeaderboardPanel"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 363.0
+offset_right = 371.0
+offset_bottom = 403.0
+
+[node name="Label" type="Label" parent="LeaderboardPanel/7"]
+layout_mode = 0
+offset_right = 342.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 35
+text = " 7. USER(SCORE)"
+
+[node name="8" type="Panel" parent="LeaderboardPanel"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 408.0
+offset_right = 371.0
+offset_bottom = 448.0
+
+[node name="Label" type="Label" parent="LeaderboardPanel/8"]
+layout_mode = 0
+offset_right = 342.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 35
+text = " 8. USER(SCORE)"
+
+[node name="9" type="Panel" parent="LeaderboardPanel"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 453.0
+offset_right = 371.0
+offset_bottom = 493.0
+
+[node name="Label" type="Label" parent="LeaderboardPanel/9"]
+layout_mode = 0
+offset_right = 342.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 35
+text = " 9. USER(SCORE)"
+
+[node name="10" type="Panel" parent="LeaderboardPanel"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 498.0
+offset_right = 371.0
+offset_bottom = 538.0
+
+[node name="Label" type="Label" parent="LeaderboardPanel/10"]
+layout_mode = 0
+offset_right = 342.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 35
+text = " 10. USER(SCORE)"
+
+[node name="SettingsPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 71.0
+offset_top = 115.0
+offset_right = 472.0
+offset_bottom = 673.0
+pivot_offset = Vector2(-40, 180)
+theme_override_styles/panel = SubResource("StyleBoxFlat_g3eks")
+
+[node name="Settings" type="Label" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 5.0
+offset_right = 396.0
+offset_bottom = 110.0
+scale = Vector2(1, 0.995939)
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 55
+text = " Settings:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CheckButton" type="CheckButton" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 97.0
+offset_right = 264.0
+offset_bottom = 134.0
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/focus = SubResource("StyleBoxFlat_i6lef")
+text = "Music"
+script = ExtResource("7_v86rl")
+
+[node name="CheckButton2" type="CheckButton" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 151.0
+offset_right = 263.0
+offset_bottom = 188.0
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/focus = SubResource("StyleBoxFlat_i6lef")
+text = "sound EFFECTS"
+script = ExtResource("8_13sgg")
+
+[node name="Controls" type="Label" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 215.0
+offset_right = 403.0
+offset_bottom = 278.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 55
+text = "CONTROLS:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Up" type="Label" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 294.0
+offset_right = 389.0
+offset_bottom = 323.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 25
+text = ": UP"
+
+[node name="Up" type="Panel" parent="SettingsPanel/Up"]
+layout_mode = 0
+offset_left = -45.0
+offset_top = -6.0
+offset_right = -5.0
+offset_bottom = 34.0
+
+[node name="Label" type="Label" parent="SettingsPanel/Up/Up"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 15
+text = "UP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="W" type="Panel" parent="SettingsPanel/Up"]
+layout_mode = 0
+offset_left = -90.0
+offset_top = -6.0
+offset_right = -50.0
+offset_bottom = 34.0
+
+[node name="Label" type="Label" parent="SettingsPanel/Up/W"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+text = "W"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Down" type="Label" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 342.0
+offset_right = 255.0
+offset_bottom = 371.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 25
+text = ": Down"
+
+[node name="S" type="Panel" parent="SettingsPanel/Down"]
+layout_mode = 0
+offset_left = -105.0
+offset_top = -5.0
+offset_right = -65.0
+offset_bottom = 35.0
+
+[node name="Label" type="Label" parent="SettingsPanel/Down/S"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+text = "S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Down" type="Panel" parent="SettingsPanel/Down"]
+layout_mode = 0
+offset_left = -60.0
+offset_top = -5.0
+offset_right = -4.0
+offset_bottom = 35.0
+
+[node name="Label" type="Label" parent="SettingsPanel/Down/Down"]
+layout_mode = 0
+offset_right = 57.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 15
+text = "DOWN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Right" type="Label" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 391.0
+offset_right = 255.0
+offset_bottom = 420.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 25
+text = ": RIGHT"
+
+[node name="D" type="Panel" parent="SettingsPanel/Right"]
+layout_mode = 0
+offset_left = -105.0
+offset_top = -5.0
+offset_right = -65.0
+offset_bottom = 35.0
+
+[node name="Label" type="Label" parent="SettingsPanel/Right/D"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+text = "D"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Right" type="Panel" parent="SettingsPanel/Right"]
+layout_mode = 0
+offset_left = -60.0
+offset_top = -5.0
+offset_right = -4.0
+offset_bottom = 35.0
+
+[node name="Label" type="Label" parent="SettingsPanel/Right/Right"]
+layout_mode = 0
+offset_right = 57.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 15
+text = "RIGHT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Left" type="Label" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 440.0
+offset_right = 255.0
+offset_bottom = 469.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 25
+text = ": Left"
+
+[node name="A" type="Panel" parent="SettingsPanel/Left"]
+layout_mode = 0
+offset_left = -105.0
+offset_top = -5.0
+offset_right = -65.0
+offset_bottom = 35.0
+
+[node name="Label" type="Label" parent="SettingsPanel/Left/A"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Left" type="Panel" parent="SettingsPanel/Left"]
+layout_mode = 0
+offset_left = -60.0
+offset_top = -5.0
+offset_right = -4.0
+offset_bottom = 35.0
+
+[node name="Label" type="Label" parent="SettingsPanel/Left/Left"]
+layout_mode = 0
+offset_right = 57.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 15
+text = "LEFT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Space" type="Panel" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 484.0
+offset_right = 161.0
+offset_bottom = 524.0
+
+[node name="Label" type="Label" parent="SettingsPanel/Space"]
+layout_mode = 0
+offset_right = 59.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 15
+text = "Space"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Click" type="Panel" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 484.0
+offset_right = 98.0
+offset_bottom = 524.0
+
+[node name="Label" type="Label" parent="SettingsPanel/Click"]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 56.0
+offset_bottom = 40.0
+text = "CLICK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Shoot" type="Label" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 489.0
+offset_right = 264.0
+offset_bottom = 518.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 25
+text = ": Shoot"
+
+[node name="LoadscreenPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 863.0
+offset_right = 524.0
+offset_bottom = 1003.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ufwb2")
+
+[node name="Label" type="Label" parent="LoadscreenPanel"]
+layout_mode = 0
+offset_top = -14.0
+offset_right = 510.0
+offset_bottom = 86.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 35
+text = "Loading..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="LoadscreenPanel"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 61.0
+offset_right = 488.0
+offset_bottom = 88.0
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 23
+script = ExtResource("13_6cdou")
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Leaderboard" to="." method="_on_leaderboard_pressed"]
+[connection signal="toggled" from="SettingsPanel/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="toggled" from="SettingsPanel/CheckButton2" to="." method="_on_check_button_2_toggled"]
