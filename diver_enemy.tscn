@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://b44td57ucdn7v"]
+
+[ext_resource type="PackedScene" uid="uid://n6lb171rl3wr" path="res://scenes/enemy.tscn" id="1_x15ja"]
+[ext_resource type="Texture2D" uid="uid://8ssniikhk3ub" path="res://assets/Screenshot_2026-06-03_204803-removebg-preview.png" id="2_5ovsw"]
+
+[node name="DiverEnemy" instance=ExtResource("1_x15ja")]
+position = Vector2(4, 0)
+speed = 400
+hp = 1
+points = 200
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(211, 144)
+texture = ExtResource("2_5ovsw")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(212, 145)
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="2"]
+position = Vector2(213, 87)

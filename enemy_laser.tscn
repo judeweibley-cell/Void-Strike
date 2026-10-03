@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://b14068g8uce14"]
+
+[ext_resource type="Texture2D" uid="uid://b13dnhhusjqiq" path="res://assets/Screenshot_2026-06-03_175526-removebg-preview.png" id="2_x6ppl"]
+
+[sub_resource type="GDScript" id="GDScript_im30v"]
+script/source = "extends Area2D
+
+@export var speed = 600
+@export var damage = 1
+
+signal die()
+signal player_die
+
+func _physics_process(_delta):
+	global_position.y += speed * _delta
+			
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	queue_free()
+
+func _on_body_entered(body: Node2D) -> void:
+	if body is Player:
+		if body.has_method(\"die\"):
+			body.die() # Call the die function directly on the player
+			queue_free() # Optional: destroys the laser on impact
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_412cd"]
+radius = 5.0
+height = 28.0
+
+[node name="Enemy_Laser" type="Area2D"]
+position = Vector2(-145, -201)
+collision_layer = 4
+collision_mask = 3
+script = SubResource("GDScript_im30v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(148, 198)
+rotation = -3.1369
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("2_x6ppl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(146.76, 198.6)
+shape = SubResource("CapsuleShape2D_412cd")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(145, 134)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

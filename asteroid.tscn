@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch7ejnev36f5g"]
+
+[ext_resource type="PackedScene" uid="uid://n6lb171rl3wr" path="res://scenes/enemy.tscn" id="1_akfqu"]
+[ext_resource type="Texture2D" uid="uid://bri1xj672cwbu" path="res://assets/Screenshot_2026-07-11_120149-removebg-preview.png" id="2_6mo6b"]
+
+[node name="asteroid" instance=ExtResource("1_akfqu")]
+speed = 100
+hp = 10
+points = 500
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(275, 150)
+scale = Vector2(0.246479, 0.246479)
+texture = ExtResource("2_6mo6b")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(280, 153)
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="2"]
+position = Vector2(264, 81)

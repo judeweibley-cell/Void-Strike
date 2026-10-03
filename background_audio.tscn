@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddxfpjt7oawdb"]
+
+[ext_resource type="AudioStream" uid="uid://cl1t18xuwcp07" path="res://sounds/TheFatRat - MAYDAY feat.mp3" id="1_rq1h7"]
+[ext_resource type="Script" uid="uid://7dme18ss8jpa" path="res://scripts/background_audio.gd" id="2_66kv4"]
+
+[node name="BackgroundAudio" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_rq1h7")
+autoplay = true
+script = ExtResource("2_66kv4")

@@ -1,0 +1,1079 @@
+[gd_scene load_steps=78 format=3 uid="uid://wq7njw427me3"]
+
+[ext_resource type="Script" uid="uid://dre6j4k4i420t" path="res://scripts/game.gd" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://b44td57ucdn7v" path="res://scenes/diver_enemy.tscn" id="2_kvuet"]
+[ext_resource type="PackedScene" uid="uid://c4j62q411ino1" path="res://scenes/player.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://cljg71tqad33n" path="res://scenes/laser.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://n6lb171rl3wr" path="res://scenes/enemy.tscn" id="3_trtic"]
+[ext_resource type="PackedScene" uid="uid://ch7ejnev36f5g" path="res://scenes/asteroid.tscn" id="4_ir15t"]
+[ext_resource type="AudioStream" uid="uid://bfx2y0l6msxhc" path="res://sounds/Laser_Shoot16.wav" id="4_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://bkpot5dvieqf3" path="res://scenes/hud.tscn" id="4_p57ef"]
+[ext_resource type="AudioStream" uid="uid://chrdgapaaskaf" path="res://sounds/Explosion18 (1).wav" id="5_dinhu"]
+[ext_resource type="Script" uid="uid://d01p86qol4sca" path="res://scenes/camera.gd" id="5_q8j3a"]
+[ext_resource type="PackedScene" uid="uid://5ol46fbgk7w7" path="res://scenes/game_over_screen.tscn" id="5_u5sy4"]
+[ext_resource type="Texture2D" uid="uid://s36hf6u73lwh" path="res://Background.png" id="6_gee14"]
+[ext_resource type="AudioStream" uid="uid://pox073fyb8f2" path="res://sounds/Hit.wav" id="6_kvuet"]
+[ext_resource type="AudioStream" uid="uid://cl1t18xuwcp07" path="res://sounds/TheFatRat - MAYDAY feat.mp3" id="7_dinhu"]
+[ext_resource type="AudioStream" uid="uid://dmypgg431s63d" path="res://sounds/Click button (16 sound effects).mp3.wav" id="9_o8ni1"]
+[ext_resource type="Script" uid="uid://6ecqd7bafphp" path="res://scenes/parallax_background.gd" id="12_3hbvx"]
+[ext_resource type="PackedScene" uid="uid://pvmwimnwwj2t" path="res://scripts/shield.tscn" id="14_37s47"]
+[ext_resource type="Script" uid="uid://bh81ivvmcj2gr" path="res://scripts/shield.gd" id="15_bt5mj"]
+[ext_resource type="PackedScene" uid="uid://muk847mu1quy" path="res://scenes/power_up.tscn" id="15_ir15t"]
+[ext_resource type="PackedScene" uid="uid://d0y83a36lmn4s" path="res://scenes/power_up_2.tscn" id="16_264po"]
+[ext_resource type="Script" uid="uid://cq8uv2yfqe2ey" path="res://scenes/progress_bar.gd" id="16_ca42v"]
+[ext_resource type="Texture2D" uid="uid://du4vnxm4cyy2m" path="res://assets/Screenshot_2026-08-11_215035-removebg-preview.png" id="16_sww3w"]
+[ext_resource type="PackedScene" uid="uid://f8gjwh2gvqo0" path="res://scenes/shooting_enemy_1.tscn" id="17_rysoc"]
+[ext_resource type="Script" uid="uid://bykvup3qcfngw" path="res://scenes/gpu_particles_2d.gd" id="17_suyxu"]
+[ext_resource type="PackedScene" uid="uid://8qgex4sg3egs" path="res://scenes/shooting_enemy_2.tscn" id="18_264po"]
+[ext_resource type="PackedScene" uid="uid://b14068g8uce14" path="res://scenes/enemy_laser.tscn" id="18_ssvqc"]
+[ext_resource type="Script" uid="uid://buhbumh3hxjjb" path="res://scenes/power_up_spawner.gd" id="20_1kice"]
+[ext_resource type="PackedScene" uid="uid://dvw0qts5kckbv" path="res://scripts/power_up_3.tscn" id="20_5newe"]
+[ext_resource type="FontFile" uid="uid://ct04e3ohjsinm" path="res://fonts/Kenney Future Narrow.ttf" id="24_e1j6l"]
+[ext_resource type="Script" uid="uid://iuj8d45qbi4d" path="res://scenes/fuel_bar.gd" id="25_bhx41"]
+[ext_resource type="Texture2D" uid="uid://dwr38t0jafqbh" path="res://assets/Screenshot_2026-08-11_201625-removebg-preview.png" id="25_pl11u"]
+[ext_resource type="PackedScene" uid="uid://cx34efxib1tr4" path="res://scenes/fuel.tscn" id="27_qnb83"]
+[ext_resource type="Script" uid="uid://bojguf6n1gdso" path="res://scenes/coin_spawner.gd" id="30_sgl2t"]
+[ext_resource type="Texture2D" uid="uid://cbj4h5facywms" path="res://assets/Screenshot_2026-08-12_145231-removebg-preview (1).png" id="32_v2yb1"]
+[ext_resource type="Script" uid="uid://cmxw6hd3f6qj2" path="res://scenes/coins.gd" id="32_wljb1"]
+[ext_resource type="Script" uid="uid://duomlvswkn5jj" path="res://scenes/heart_1.gd" id="33_gxtfn"]
+[ext_resource type="Script" uid="uid://b68kvv32ll0ls" path="res://scenes/heart_2.gd" id="34_twgab"]
+[ext_resource type="Script" uid="uid://bjmy7pcxfdpw0" path="res://scenes/heart_3.gd" id="35_02fa5"]
+[ext_resource type="Script" uid="uid://bmq3qm5obcebl" path="res://scenes/heart_4.gd" id="36_pr1ej"]
+[ext_resource type="Script" uid="uid://4438nujpni4u" path="res://scenes/wave_counter.gd" id="36_twgab"]
+[ext_resource type="Texture2D" uid="uid://bkb3qo3wjxcho" path="res://assets/Screenshot_2026-08-12_220758-removebg-preview.png" id="37_02fa5"]
+[ext_resource type="Script" uid="uid://c4hbty0312fse" path="res://scenes/heart_5.gd" id="37_05nbr"]
+[ext_resource type="Script" uid="uid://cqo1uheg1g3a2" path="res://scenes/shop.gd" id="37_7025r"]
+[ext_resource type="Script" uid="uid://bchgpealhs5sv" path="res://scenes/button.gd" id="38_m4url"]
+[ext_resource type="Script" uid="uid://bfwyhbgsk3yjt" path="res://scenes/refuel.gd" id="38_nepv3"]
+[ext_resource type="Script" uid="uid://dvt72lioyu4xn" path="res://scenes/speed_upgrade.gd" id="40_0sl42"]
+[ext_resource type="Script" uid="uid://bnd4o6xorlu62" path="res://scenes/fire_rate_upgrade.gd" id="40_05nbr"]
+[ext_resource type="Script" uid="uid://dsenrwcpynamh" path="res://scenes/shield_upgrade.gd" id="45_8qswn"]
+[ext_resource type="Script" uid="uid://dfu7eccylt1fs" path="res://scenes/super_nova.gd" id="45_458eo"]
+[ext_resource type="Script" uid="uid://17jsa8tqp78v" path="res://scenes/fire_upgrade.gd" id="45_fedci"]
+[ext_resource type="Script" uid="uid://dpprrog0yx6ue" path="res://scenes/score.gd" id="45_h3rex"]
+[ext_resource type="Texture2D" uid="uid://bue8ylyqy28tl" path="res://assets/Screenshot_2026-08-16_130818-removebg-preview.png" id="45_oaba0"]
+[ext_resource type="Script" uid="uid://dx3kkpk13y2k3" path="res://scenes/shield_label.gd" id="46_pf7vy"]
+[ext_resource type="Script" uid="uid://cnp0nh0spufx0" path="res://scenes/fire_label.gd" id="48_o8ni1"]
+[ext_resource type="Script" uid="uid://bcoh67r8jr0px" path="res://scenes/score_label.gd" id="50_3hbvx"]
+[ext_resource type="PackedScene" uid="uid://bxoj1ma6dy5wg" path="res://scenes/tank_enemy.tscn" id="56_ms3bu"]
+[ext_resource type="PackedScene" uid="uid://dwg3r7gsdltwe" path="res://scenes/horde_spawner.tscn" id="57_7ixpq"]
+[ext_resource type="PackedScene" uid="uid://c7p3bghi363xy" path="res://scenes/asteroid_field_spawner.tscn" id="58_bk1p3"]
+[ext_resource type="PackedScene" uid="uid://b24bi8aju5tp7" path="res://scenes/suicider.tscn" id="59_n8ral"]
+[ext_resource type="PackedScene" uid="uid://dh6pfxx5ry27y" path="res://scenes/Bomber.tscn" id="60_yd4ix"]
+[ext_resource type="PackedScene" uid="uid://p7txfjwujfvm" path="res://scenes/space_junk.tscn" id="61_66xif"]
+
+[sub_resource type="PackedScene" id="PackedScene_rysoc"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("Area2D", "Area2D", "Sprite2D", "Sprite2D", "CollisionShape2D", "CollisionShape2D", "VisibleOnScreenNotifier2D", "VisibleOnScreenNotifier2D"),
+"node_count": 4,
+"node_paths": [NodePath("."), NodePath("."), NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 0, 0, 1073741824, 0, 3, 2, -1, 0, 0, 1073741825, 0, 5, 4, -1, 0, 0, 1073741826, 0, 7, 6, -1, 0, 0),
+"variants": [],
+"version": 3
+}
+
+[sub_resource type="Curve" id="Curve_sww3w"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_66xif"]
+width = 4096
+curve = SubResource("Curve_sww3w")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_suyxu"]
+particle_flag_disable_z = true
+direction = Vector3(-1, 0, 0)
+spread = 20.0
+initial_velocity_min = -180.0
+initial_velocity_max = 180.0
+gravity = Vector3(0, 98, 0)
+scale_min = 0.2
+scale_max = 0.25
+scale_curve = SubResource("CurveTexture_66xif")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gee14"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(270, 1, 1)
+direction = Vector3(0, -1, 0)
+spread = 0.0
+initial_velocity_min = -1000.0
+initial_velocity_max = -1000.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_twgab"]
+bg_color = Color(0.0666667, 0.435294, 0.670588, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7025r"]
+bg_color = Color(0, 0, 0, 0.745098)
+border_width_right = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_02fa5"]
+bg_color = Color(0, 0, 0, 0.537255)
+border_width_right = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rm0al"]
+bg_color = Color(0, 0, 0, 0.745098)
+border_width_left = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8qswn"]
+bg_color = Color(0, 0, 0, 0.745098)
+border_width_left = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nepv3"]
+bg_color = Color(0, 0, 0, 0.537255)
+border_width_left = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05nbr"]
+bg_color = Color(0.0299624, 0.300758, 0.472425, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0sl42"]
+bg_color = Color(0, 0, 0, 0.458824)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pr1ej"]
+bg_color = Color(0.0313726, 0.301961, 0.470588, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ool0"]
+bg_color = Color(0.0313726, 0.301961, 0.470588, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m4url"]
+bg_color = Color(0.0313726, 0.301961, 0.470588, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_uwrxv")
+enemy_scenes = Array[PackedScene]([ExtResource("3_trtic"), ExtResource("3_trtic"), ExtResource("3_trtic"), ExtResource("3_trtic"), ExtResource("3_trtic"), ExtResource("2_kvuet"), ExtResource("2_kvuet"), ExtResource("2_kvuet"), ExtResource("2_kvuet"), ExtResource("4_ir15t")])
+power_up_scenes = Array[PackedScene]([SubResource("PackedScene_rysoc")])
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(270, 480)
+script = ExtResource("5_q8j3a")
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_offset = Vector2(-349, -2785)
+repeat_size = Vector2(0, 960)
+autoscroll = Vector2(0, 100)
+repeat_times = 3
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(198, 153)
+texture = ExtResource("6_gee14")
+centered = false
+
+[node name="Player" parent="." instance=ExtResource("2_yqjtg")]
+position = Vector2(271, 870)
+
+[node name="Shield" parent="Player" instance=ExtResource("14_37s47")]
+visible = false
+show_behind_parent = true
+top_level = true
+position = Vector2(271, 917)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("15_bt5mj")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Player"]
+position = Vector2(-15, 24)
+scale = Vector2(0.2, 0.2)
+amount = 5
+texture = ExtResource("16_sww3w")
+lifetime = 0.4
+process_material = SubResource("ParticleProcessMaterial_suyxu")
+script = ExtResource("17_suyxu")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="Player"]
+position = Vector2(16, 24)
+scale = Vector2(0.2, 0.2)
+amount = 5
+texture = ExtResource("16_sww3w")
+lifetime = 0.4
+process_material = SubResource("ParticleProcessMaterial_suyxu")
+script = ExtResource("17_suyxu")
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="LaserSound" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("4_kvpfn")
+
+[node name="ExplodeSound" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("5_dinhu")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("6_kvuet")
+volume_db = 2.5
+max_polyphony = 5
+
+[node name="Song" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("7_dinhu")
+volume_db = 6.0
+
+[node name="ClickSound" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("9_o8ni1")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = -1
+visible = false
+scroll_ignore_camera_zoom = true
+script = ExtResource("12_3hbvx")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(0, 960)
+
+[node name="PurpleStars" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(0, 2)
+texture = ExtResource("6_gee14")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 540, 960)
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="UILayer" instance=ExtResource("4_p57ef")]
+top_level = true
+light_mask = 0
+visibility_layer = 3
+z_index = -1
+offset_left = 3.0
+offset_top = -1.0
+offset_right = 3.0
+offset_bottom = 1.0
+mouse_filter = 2
+
+[node name="GameOverScreen" parent="UILayer" instance=ExtResource("5_u5sy4")]
+visible = false
+mouse_filter = 2
+
+[node name="StarParticleEffect" type="GPUParticles2D" parent="."]
+position = Vector2(270, -50)
+scale = Vector2(0.921367, 1.99851)
+amount = 20
+preprocess = 5.0
+collision_base_size = 128.0
+trail_lifetime = 1.25
+process_material = SubResource("ParticleProcessMaterial_gee14")
+
+[node name="EnemySpawnTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="Laser" parent="." instance=ExtResource("3_lnu2h")]
+position = Vector2(-328, 478)
+
+[node name="LaserContainer" type="Node2D" parent="."]
+position = Vector2(0, 1)
+
+[node name="EnemyLaserContainer" type="Node2D" parent="."]
+position = Vector2(0, 1)
+
+[node name="EnemyContainer" type="Node2D" parent="."]
+
+[node name="PowerUpSpawnTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="Power_Up" parent="." instance=ExtResource("15_ir15t")]
+position = Vector2(-608, 850)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
+offset_left = 9.0
+offset_top = 927.0
+offset_right = 533.0
+offset_bottom = 954.0
+show_percentage = false
+script = ExtResource("16_ca42v")
+
+[node name="Power_up_2" parent="." instance=ExtResource("16_264po")]
+position = Vector2(-541, 856)
+scale = Vector2(1.6, 1.6)
+
+[node name="Shooting_Enemy1" parent="." instance=ExtResource("17_rysoc")]
+position = Vector2(-807, 576)
+
+[node name="Enemy_Laser" parent="." instance=ExtResource("18_ssvqc")]
+position = Vector2(-368, 475)
+
+[node name="shooting_enemy_2" parent="." instance=ExtResource("18_264po")]
+position = Vector2(-888, 570)
+
+[node name="Power_up_3" parent="." instance=ExtResource("20_5newe")]
+position = Vector2(-458, 851)
+scale = Vector2(1.15, 1.15)
+
+[node name="Power_up_spawner" type="Node2D" parent="."]
+position = Vector2(2, 1)
+script = ExtResource("20_1kice")
+
+[node name="FuelBar" type="ProgressBar" parent="."]
+top_level = true
+offset_left = 9.0
+offset_top = 702.0
+offset_right = 43.0
+offset_bottom = 902.0
+tooltip_text = "hy"
+theme_override_fonts/font = ExtResource("24_e1j6l")
+theme_override_font_sizes/font_size = 10
+value = 100.0
+fill_mode = 3
+script = ExtResource("25_bhx41")
+
+[node name="Sprite2D" type="Sprite2D" parent="FuelBar"]
+top_level = true
+position = Vector2(23, 903)
+scale = Vector2(0.100418, 0.100418)
+texture = ExtResource("25_pl11u")
+
+[node name="Fuel" parent="." instance=ExtResource("27_qnb83")]
+position = Vector2(-708, 839)
+scale = Vector2(0.25, 0.25)
+
+[node name="Enemy" parent="." instance=ExtResource("3_trtic")]
+position = Vector2(-706, 445)
+
+[node name="Coin_spawner" type="Node2D" parent="."]
+visible = false
+position = Vector2(274, 239)
+script = ExtResource("30_sgl2t")
+
+[node name="Coins" type="Label" parent="."]
+offset_top = 45.0
+offset_right = 539.0
+offset_bottom = 95.0
+theme_override_fonts/font = ExtResource("24_e1j6l")
+theme_override_font_sizes/font_size = 25
+text = "Coins: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("32_wljb1")
+
+[node name="Heart1" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(27, 650)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("32_v2yb1")
+script = ExtResource("33_gxtfn")
+
+[node name="Heart2" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(27, 610)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("32_v2yb1")
+script = ExtResource("34_twgab")
+
+[node name="Heart3" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(27, 569)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("32_v2yb1")
+script = ExtResource("35_02fa5")
+
+[node name="Heart4" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(27, 528)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("32_v2yb1")
+script = ExtResource("36_pr1ej")
+
+[node name="Heart5" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(27, 487)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("32_v2yb1")
+script = ExtResource("37_05nbr")
+
+[node name="Wave_counter" type="Label" parent="."]
+top_level = true
+offset_right = 540.0
+offset_bottom = 262.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("24_e1j6l")
+theme_override_font_sizes/font_size = 41
+text = "~~Wave: 1~~"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("36_twgab")
+
+[node name="Shop" type="Panel" parent="."]
+visible = false
+top_level = true
+offset_left = 57.0
+offset_top = 94.0
+offset_right = 491.0
+offset_bottom = 944.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_twgab")
+script = ExtResource("37_7025r")
+
+[node name="ShipTab" type="Button" parent="Shop"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 217.0
+offset_bottom = 59.0
+focus_mode = 0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("24_e1j6l")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_7025r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7025r")
+theme_override_styles/normal = SubResource("StyleBoxFlat_02fa5")
+text = "Ship"
+
+[node name="PowerUpsTab" type="Button" parent="Shop"]
+layout_mode = 0
+offset_left = 217.0
+offset_top = 7.0
+offset_right = 426.0
+offset_bottom = 59.0
+focus_mode = 0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("24_e1j6l")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_rm0al")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8qswn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_nepv3")
+text = "Power Ups"
+
+[node name="ShipUpgrades" type="Node2D" parent="Shop"]
+
+[node name="Panel5" type="Panel" parent="Shop/ShipUpgrades"]
+offset_left = 22.0
+offset_top = 543.0
+offset_right = 411.0
+offset_bottom = 758.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_05nbr")
+
+[node name="Label" type="Label" parent="Shop/ShipUpgrades/Panel5"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 137.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("24_e1j6l")
+theme_override_font_sizes/font_size = 30
+text = "Refuel"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Image" type="Sprite2D" parent="Shop/ShipUpgrades/Panel5"]
+position = Vector2(327, 151)
+scale = Vector2(0.1841, 0.1841)
+texture = ExtResource("25_pl11u")
+
+[node name="Sprite2D" type="Sprite2D" parent="Shop/ShipUpgrades/Panel5/Image"]
+show_behind_parent = true
+position = Vector2(-127.648, -117.312)
+scale = Vector2(2.09617, 2.09617)
+texture = ExtResource("37_02fa5")
+
+[node name="Panel" type="Panel" parent="Shop/ShipUpgrades/Panel5/Image/Sprite2D"]
+show_behind_parent = true
+offset_left = -152.0
+offset_top = 84.0
+offset_right = 175.0
+offset_bottom = 196.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0sl42")
+
+[node name="Button" type="Button" parent="Shop/ShipUpgrades/Panel5"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 117.0
+offset_right = 191.0
+offset_bottom = 204.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("24_e1j6l")
+theme_override_font_sizes/font_size = 30
+text = "Buy: 1"
+script = ExtResource("38_nepv3")
+
+[node name="Label2" type="Label" parent="Shop/ShipUpgrades/Panel5"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 20.0
+offset_right = 471.0
+offset_bottom = 134.0
+theme_override_fonts/font = ExtResource("24_e1j6l")
+theme_override_font_sizes/font_size = 14
+text = "Increases your fuel tank
+by 5% before the 
+next round."
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Shop/ShipUpgrades/Panel5"]
+layout_mode = 0
+offset_left = 255.0
+offset_top = 43.0
+offset_right = 351.0
+offset_bottom = 126.0
+theme_override_fonts/font = ExtResource("24_e1j6l")
+theme_override_font_sizes/font_size = 30
+text = "+ 10%"
+horizontal_alignment = 1
+
+[node name="Panel4" type="Panel" parent="Shop/ShipUpgrades"]
+offset_left = 22.0
+offset_top = 384.0
+offset_right = 411.0
+offset_bottom = 530.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pr1ej")
+
+[node name="Label" type="Label" parent="Shop/ShipUpgrades/Panel4"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 134.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("24_e1j6l")
+theme_override_font_sizes/font_size = 30
+text = "Hearts"
+
+[node name="Button" type="Button" parent="Shop/ShipUpgrades/Panel4"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 48.0
+offset_right = 191.0
+offset_bottom = 135.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("24_e1j6l")
+theme_override_font_sizes/font_size = 30
+text = "Buy: 15"
+script = ExtResource("38_m4url")
+
+[node name="Label2" type="Label" parent="Shop/ShipUpgrades/Panel4"]
+layout_mode = 0
+offset_left = 191.0
+offset_top = 1.0
+offset_right = 388.0
+offset_bottom = 146.0
+theme_override_fonts/font = ExtResource("24_e1j6l")
+theme_override_font_sizes/font_size = 14
+text = "Increases your max
+hearts by +1."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel3" type="Panel" parent="Shop/ShipUpgrades"]
+offset_left = 22.0
+offset_top = 227.0
+offset_right = 411.0
+offset_bottom = 373.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8ool0")
+
+[node name="Label" type="Label" parent="Shop/ShipUpgrades/Panel3"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 173.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("24_e1j6l")
+theme_override_font_sizes/font_size = 30
+text = "Fire Rate"
+
+[node name="Button" type="Button" parent="Shop/ShipUpgrades/Panel3"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 48.0
+offset_right = 191.0
+offset_bottom = 135.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("24_e1j6l")
+theme_override_font_sizes/font_size = 30
+text = "Buy: 10"
+script = ExtResource("40_05nbr")
+
+[node name="Label2" type="Label" parent="Shop/ShipUpgrades/Panel3"]
+layout_mode = 0
+offset_left = 191.0
+offset_right = 390.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("24_e1j6l")
+theme_override_font_sizes/font_size = 14
+text = "Increases your fire
+rate by +5%."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="Shop/ShipUpgrades"]
+offset_left = 22.0
+offset_top = 70.0
+offset_right = 411.0
+offset_bottom = 216.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_m4url")
+
+[node name="Label" type="Label" parent="Shop/ShipUpgrades/Panel2"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 116.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("24_e1j6l")
+theme_override_font_sizes/font_size = 30
+text = "Speed"
+
+[node name="Button" type="Button" parent="Shop/ShipUpgrades/Panel2"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 48.0
+offset_right = 191.0
+offset_bottom = 135.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("24_e1j6l")
+theme_override_font_sizes/font_size = 30
+text = "Buy: 999"
+script = ExtResource("40_0sl42")
+
+[node name="Label2" type="Label" parent="Shop/ShipUpgrades/Panel2"]
+layout_mode = 0
+offset_left = 191.0
+offset_right = 391.0
+offset_bottom = 146.0
+theme_override_fonts/font = ExtResource("24_e1j6l")
+theme_override_font_sizes/font_size = 14
+text = "Increases your speed
+by +5%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Shop"]
+visible = false
+modulate = Color(0, 0, 0, 0.572549)
+layout_mode = 0
+offset_left = -57.0
+offset_top = -94.0
+offset_right = 482.0
+offset_bottom = 866.0
+
+[node name="exit" type="Button" parent="Shop"]
+process_mode = 3
+top_level = true
+light_mask = 524288
+visibility_layer = 524288
+layout_mode = 0
+offset_left = 81.0
+offset_top = 859.0
+offset_right = 468.0
+offset_bottom = 925.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("24_e1j6l")
+theme_override_font_sizes/font_size = 35
+text = "exit"
+
+[node name="PowerUpUpgrades" type="Node2D" parent="Shop"]
+visible = false
+
+[node name="Panel2" type="Panel" parent="Shop/PowerUpUpgrades"]
+visibility_layer = 262144
+offset_left = 22.0
+offset_top = 70.0
+offset_right = 411.0
+offset_bottom = 216.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_m4url")
+
+[node name="Label" type="Label" parent="Shop/PowerUpUpgrades/Panel2"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 116.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("24_e1j6l")
+theme_override_font_sizes/font_size = 30
+text = "Shield"
+
+[node name="Button" type="Button" parent="Shop/PowerUpUpgrades/Panel2"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 48.0
+offset_right = 191.0
+offset_bottom = 135.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("24_e1j6l")
+theme_override_font_sizes/font_size = 30
+text = "Buy: 999"
+script = ExtResource("45_8qswn")
+
+[node name="Label2" type="Label" parent="Shop/PowerUpUpgrades/Panel2"]
+layout_mode = 0
+offset_left = 194.0
+offset_right = 394.0
+offset_bottom = 146.0
+theme_override_fonts/font = ExtResource("24_e1j6l")
+theme_override_font_sizes/font_size = 14
+text = "Increases the duration 
+by 1 sedond"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("46_pf7vy")
+
+[node name="Panel3" type="Panel" parent="Shop/PowerUpUpgrades"]
+visibility_layer = 262144
+offset_left = 22.0
+offset_top = 227.0
+offset_right = 411.0
+offset_bottom = 373.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8ool0")
+
+[node name="Label" type="Label" parent="Shop/PowerUpUpgrades/Panel3"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 173.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("24_e1j6l")
+theme_override_font_sizes/font_size = 30
+text = "Fast Fire"
+
+[node name="Button" type="Button" parent="Shop/PowerUpUpgrades/Panel3"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 48.0
+offset_right = 191.0
+offset_bottom = 135.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("24_e1j6l")
+theme_override_font_sizes/font_size = 30
+text = "Buy: 999"
+script = ExtResource("45_fedci")
+
+[node name="Label2" type="Label" parent="Shop/PowerUpUpgrades/Panel3"]
+layout_mode = 0
+offset_left = 194.0
+offset_right = 393.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("24_e1j6l")
+theme_override_font_sizes/font_size = 14
+text = "Increases the duration 
+by 1 sedond"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("48_o8ni1")
+
+[node name="Panel4" type="Panel" parent="Shop/PowerUpUpgrades"]
+visibility_layer = 262144
+offset_left = 22.0
+offset_top = 384.0
+offset_right = 411.0
+offset_bottom = 530.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pr1ej")
+
+[node name="Label" type="Label" parent="Shop/PowerUpUpgrades/Panel4"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 134.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("24_e1j6l")
+theme_override_font_sizes/font_size = 30
+text = "Score"
+
+[node name="Button" type="Button" parent="Shop/PowerUpUpgrades/Panel4"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 48.0
+offset_right = 191.0
+offset_bottom = 135.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("24_e1j6l")
+theme_override_font_sizes/font_size = 30
+text = "Buy: 999"
+script = ExtResource("45_h3rex")
+
+[node name="Label2" type="Label" parent="Shop/PowerUpUpgrades/Panel4"]
+layout_mode = 0
+offset_left = 194.0
+offset_top = 1.0
+offset_right = 391.0
+offset_bottom = 146.0
+theme_override_fonts/font = ExtResource("24_e1j6l")
+theme_override_font_sizes/font_size = 14
+text = "Increases the duration 
+by 1 sedond"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("50_3hbvx")
+
+[node name="Panel5" type="Panel" parent="Shop/PowerUpUpgrades"]
+visibility_layer = 262144
+offset_left = 22.0
+offset_top = 543.0
+offset_right = 411.0
+offset_bottom = 758.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_05nbr")
+
+[node name="Label" type="Label" parent="Shop/PowerUpUpgrades/Panel5"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 137.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("24_e1j6l")
+theme_override_font_sizes/font_size = 30
+text = "Super Nova"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Shop/PowerUpUpgrades/Panel5"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 117.0
+offset_right = 191.0
+offset_bottom = 204.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("24_e1j6l")
+theme_override_font_sizes/font_size = 30
+text = "Locked"
+script = ExtResource("45_458eo")
+
+[node name="Label2" type="Label" parent="Shop/PowerUpUpgrades/Panel5"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 20.0
+offset_right = 471.0
+offset_bottom = 134.0
+theme_override_fonts/font = ExtResource("24_e1j6l")
+theme_override_font_sizes/font_size = 14
+text = "Max out all 3 power ups 
+before unlocking"
+vertical_alignment = 1
+
+[node name="Image" type="Sprite2D" parent="Shop/PowerUpUpgrades/Panel5"]
+position = Vector2(272.483, 124.5)
+scale = Vector2(0.471751, 0.471751)
+texture = ExtResource("45_oaba0")
+
+[node name="Tank Enemy" parent="." instance=ExtResource("56_ms3bu")]
+position = Vector2(-714, 568)
+scale = Vector2(1.8, 1.8)
+
+[node name="Horde Spawner" parent="." instance=ExtResource("57_7ixpq")]
+
+[node name="asteroid_field_spawner" parent="." instance=ExtResource("58_bk1p3")]
+position = Vector2(4, -5)
+
+[node name="DiverEnemy" parent="." instance=ExtResource("2_kvuet")]
+position = Vector2(-795, 434)
+
+[node name="asteroid" parent="." instance=ExtResource("4_ir15t")]
+position = Vector2(-639, 429)
+
+[node name="Suicider" parent="." instance=ExtResource("59_n8ral")]
+position = Vector2(-998, 451)
+scale = Vector2(4.5, 4.5)
+
+[node name="Bomber" parent="." instance=ExtResource("60_yd4ix")]
+visibility_layer = 2
+position = Vector2(-1074, 579)
+
+[node name="Space Junk" parent="." instance=ExtResource("61_66xif")]
+position = Vector2(-1031, 166)
+
+[connection signal="EnemySpawn" from="." to="Shooting_Enemy1" method="_on_game_enemy_spawn"]
+[connection signal="EnemySpawn" from="." to="shooting_enemy_2" method="_on_game_enemy_spawn"]
+[connection signal="coin" from="." to="Coin_spawner" method="_on_game_coin"]
+[connection signal="screen_shake" from="." to="Camera2D" method="_on_game_screen_shake"]
+[connection signal="send_enemies" from="." to="Wave_counter" method="_on_game_send_enemies"]
+[connection signal="bomb_camera_shake" from="Player" to="Camera2D" method="_on_player_bomb_camera_shake"]
+[connection signal="delete_shield" from="Player" to="Player/Shield" method="_on_player_delete_shield"]
+[connection signal="delete_shield" from="Player" to="ProgressBar" method="_on_player_delete_shield"]
+[connection signal="hit" from="Player" to="Camera2D" method="_on_player_hit"]
+[connection signal="hit" from="Player" to="FuelBar" method="_on_player_hit"]
+[connection signal="hit" from="Player" to="Heart3" method="_on_player_hit"]
+[connection signal="killed" from="Player" to="FuelBar" method="_on_player_killed"]
+[connection signal="score_super_nova" from="Player" to="." method="_on_player_score_super_nova"]
+[connection signal="send_location" from="Player" to="Suicider" method="_on_player_send_location"]
+[connection signal="active" from="Player/Shield" to="Player" method="_on_shield_active"]
+[connection signal="area_entered" from="Player/Shield" to="Player/Shield" method="_on_area_entered"]
+[connection signal="deactive" from="Player/Shield" to="Player" method="_on_shield_deactive"]
+[connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_enemy_spawn_timer_timeout"]
+[connection signal="area_entered" from="Laser" to="Camera2D" method="_on_laser_area_entered"]
+[connection signal="timeout" from="PowerUpSpawnTimer" to="." method="_on_power_up_spawn_timer_timeout"]
+[connection signal="collect" from="Power_Up" to="Player" method="_on_power_up_collect"]
+[connection signal="collect" from="Power_Up" to="ProgressBar" method="_on_power_up_collect"]
+[connection signal="collect" from="Power_up_2" to="." method="_on_power_up_2_collect"]
+[connection signal="collect" from="Power_up_2" to="ProgressBar" method="_on_power_up_2_collect"]
+[connection signal="coin" from="Shooting_Enemy1" to="Coin_spawner" method="_on_shooting_enemy_1_coin"]
+[connection signal="enemy_laser_shot" from="Shooting_Enemy1" to="." method="_on_shooting_enemy_1_enemy_laser_shot"]
+[connection signal="killed" from="Shooting_Enemy1" to="." method="_on_shooting_enemy_1_killed"]
+[connection signal="killed" from="Shooting_Enemy1" to="Coin_spawner" method="_on_shooting_enemy_1_killed"]
+[connection signal="off_screen" from="Shooting_Enemy1" to="." method="_on_shooting_enemy_1_off_screen"]
+[connection signal="player_die" from="Shooting_Enemy1" to="Player" method="_on_shooting_enemy_1_player_die"]
+[connection signal="screen_shake" from="Shooting_Enemy1" to="Camera2D" method="_on_shooting_enemy_1_screen_shake"]
+[connection signal="spawned" from="Shooting_Enemy1" to="." method="_on_shooting_enemy_1_spawned"]
+[connection signal="die" from="Enemy_Laser" to="Player" method="_on_enemy_laser_die"]
+[connection signal="player_die" from="Enemy_Laser" to="Player" method="_on_enemy_laser_player_die"]
+[connection signal="coin" from="shooting_enemy_2" to="Coin_spawner" method="_on_shooting_enemy_2_coin"]
+[connection signal="enemy_laser_shot" from="shooting_enemy_2" to="." method="_on_shooting_enemy_2_enemy_laser_shot"]
+[connection signal="killed" from="shooting_enemy_2" to="." method="_on_shooting_enemy_2_killed"]
+[connection signal="killed" from="shooting_enemy_2" to="Coin_spawner" method="_on_shooting_enemy_2_killed"]
+[connection signal="off_screen" from="shooting_enemy_2" to="." method="_on_shooting_enemy_2_off_screen"]
+[connection signal="player_die" from="shooting_enemy_2" to="Player" method="_on_shooting_enemy_2_player_die"]
+[connection signal="spawned" from="shooting_enemy_2" to="." method="_on_shooting_enemy_2_spawned"]
+[connection signal="collect" from="Power_up_3" to="Player/Shield" method="_on_power_up_3_collect"]
+[connection signal="collect" from="Power_up_3" to="ProgressBar" method="_on_power_up_3_collect"]
+[connection signal="reload" from="Power_up_spawner" to="Power_Up" method="_on_power_up_spawner_reload"]
+[connection signal="score" from="Power_up_spawner" to="Power_up_2" method="_on_power_up_spawner_score"]
+[connection signal="shield" from="Power_up_spawner" to="Power_up_3" method="_on_power_up_spawner_shield"]
+[connection signal="send_missing_value" from="FuelBar" to="Shop/ShipUpgrades/Panel5/Button" method="_on_fuel_bar_send_missing_value"]
+[connection signal="tank_empty" from="FuelBar" to="Player" method="_on_fuel_bar_tank_empty"]
+[connection signal="collect" from="Fuel" to="FuelBar" method="_on_fuel_collect"]
+[connection signal="coin" from="Enemy" to="Coin_spawner" method="_on_enemy_coin"]
+[connection signal="exited" from="Enemy" to="." method="_on_enemy_exited"]
+[connection signal="hit" from="Enemy" to="Camera2D" method="_on_enemy_hit"]
+[connection signal="spawn" from="Coin_spawner" to="." method="_on_coin_spawner_spawn"]
+[connection signal="send_coin_value" from="Coins" to="Shop/ShipUpgrades/Panel5/Button" method="_on_coins_send_coin_value"]
+[connection signal="send_coin_value" from="Coins" to="Shop/ShipUpgrades/Panel4/Button" method="_on_coins_send_coin_value"]
+[connection signal="send_coin_value" from="Coins" to="Shop/ShipUpgrades/Panel3/Button" method="_on_coins_send_coin_value"]
+[connection signal="send_coin_value" from="Coins" to="Shop/ShipUpgrades/Panel2/Button" method="_on_coins_send_coin_value"]
+[connection signal="send_coin_value" from="Coins" to="Shop/PowerUpUpgrades/Panel2/Button" method="_on_coins_send_coin_value"]
+[connection signal="send_coin_value" from="Coins" to="Shop/PowerUpUpgrades/Panel3/Button" method="_on_coins_send_coin_value"]
+[connection signal="send_coin_value" from="Coins" to="Shop/PowerUpUpgrades/Panel4/Button" method="_on_coins_send_coin_value"]
+[connection signal="die" from="Heart3" to="Player" method="_on_heart_3_die"]
+[connection signal="delete_enemies" from="Wave_counter" to="Enemy" method="_on_wave_counter_delete_enemies"]
+[connection signal="open_shop" from="Wave_counter" to="Player" method="_on_wave_counter_open_shop"]
+[connection signal="open_shop" from="Wave_counter" to="Heart3" method="_on_wave_counter_open_shop"]
+[connection signal="open_shop" from="Wave_counter" to="Shop" method="_on_wave_counter_open_shop"]
+[connection signal="open_shop" from="Wave_counter" to="Shop/ShipUpgrades/Panel5/Button" method="_on_wave_counter_open_shop"]
+[connection signal="open_shop" from="Wave_counter" to="Suicider" method="_on_wave_counter_open_shop"]
+[connection signal="open_shop" from="Wave_counter" to="Bomber" method="_on_wave_counter_open_shop"]
+[connection signal="pause_enemies" from="Wave_counter" to="." method="_on_wave_counter_pause_enemies"]
+[connection signal="pause_enemies" from="Wave_counter" to="Shooting_Enemy1" method="_on_wave_counter_pause_enemies"]
+[connection signal="pause_enemies" from="Wave_counter" to="shooting_enemy_2" method="_on_wave_counter_pause_enemies"]
+[connection signal="pause_enemies" from="Wave_counter" to="Tank Enemy" method="_on_wave_counter_pause_enemies"]
+[connection signal="pause_enemies" from="Wave_counter" to="Suicider" method="_on_wave_counter_pause_enemies"]
+[connection signal="pause_enemies" from="Wave_counter" to="Bomber" method="_on_wave_counter_pause_enemies"]
+[connection signal="pause_fuel" from="Wave_counter" to="FuelBar" method="_on_wave_counter_pause_fuel"]
+[connection signal="pause_health" from="Wave_counter" to="Player" method="_on_wave_counter_pause_health"]
+[connection signal="pause_power_ups" from="Wave_counter" to="Power_up_spawner" method="_on_wave_counter_pause_power_ups"]
+[connection signal="pause_power_ups" from="Wave_counter" to="Fuel" method="_on_wave_counter_pause_power_ups"]
+[connection signal="send_wave" from="Wave_counter" to="UILayer/GameOverScreen" method="_on_wave_counter_send_wave"]
+[connection signal="unpause_enemies" from="Wave_counter" to="." method="_on_wave_counter_unpause_enemies"]
+[connection signal="unpause_enemies" from="Wave_counter" to="Shooting_Enemy1" method="_on_wave_counter_unpause_enemies"]
+[connection signal="unpause_enemies" from="Wave_counter" to="shooting_enemy_2" method="_on_wave_counter_unpause_enemies"]
+[connection signal="unpause_enemies" from="Wave_counter" to="Tank Enemy" method="_on_wave_counter_unpause_enemies"]
+[connection signal="unpause_enemies" from="Wave_counter" to="Suicider" method="_on_wave_counter_unpause_enemies"]
+[connection signal="unpause_enemies" from="Wave_counter" to="Bomber" method="_on_wave_counter_unpause_enemies"]
+[connection signal="unpause_fuel" from="Wave_counter" to="FuelBar" method="_on_wave_counter_unpause_fuel"]
+[connection signal="unpause_health" from="Wave_counter" to="Player" method="_on_wave_counter_unpause_health"]
+[connection signal="unpause_power_ups" from="Wave_counter" to="Power_up_spawner" method="_on_wave_counter_unpause_power_ups"]
+[connection signal="unpause_power_ups" from="Wave_counter" to="Fuel" method="_on_wave_counter_unpause_power_ups"]
+[connection signal="wave_number" from="Wave_counter" to="." method="_on_wave_counter_wave_number"]
+[connection signal="wave_number" from="Wave_counter" to="Shooting_Enemy1" method="_on_wave_counter_wave_number"]
+[connection signal="wave_number" from="Wave_counter" to="shooting_enemy_2" method="_on_wave_counter_wave_number"]
+[connection signal="wave_number" from="Wave_counter" to="Tank Enemy" method="_on_wave_counter_wave_number"]
+[connection signal="wave_number" from="Wave_counter" to="Suicider" method="_on_wave_counter_wave_number"]
+[connection signal="wave_number" from="Wave_counter" to="Bomber" method="_on_wave_counter_wave_number"]
+[connection signal="pressed" from="Shop/ShipTab" to="Shop" method="_on_ship_tab_pressed"]
+[connection signal="pressed" from="Shop/PowerUpsTab" to="Shop" method="_on_power_ups_tab_pressed"]
+[connection signal="pressed" from="Shop/ShipUpgrades/Panel5/Button" to="Shop/ShipUpgrades/Panel5/Button" method="_on_pressed"]
+[connection signal="refuel" from="Shop/ShipUpgrades/Panel5/Button" to="FuelBar" method="_on_button_refuel"]
+[connection signal="refuel" from="Shop/ShipUpgrades/Panel5/Button" to="Coins" method="_on_button_refuel"]
+[connection signal="buy" from="Shop/ShipUpgrades/Panel4/Button" to="Coins" method="_on_button_buy"]
+[connection signal="buy" from="Shop/ShipUpgrades/Panel4/Button" to="Heart3" method="_on_button_buy"]
+[connection signal="buy" from="Shop/ShipUpgrades/Panel4/Button" to="Heart4" method="_on_button_buy"]
+[connection signal="pressed" from="Shop/ShipUpgrades/Panel4/Button" to="Shop/ShipUpgrades/Panel4/Button" method="_on_pressed"]
+[connection signal="buyfire" from="Shop/ShipUpgrades/Panel3/Button" to="Player" method="_on_button_buyfire"]
+[connection signal="buyfire" from="Shop/ShipUpgrades/Panel3/Button" to="Coins" method="_on_button_buyfire"]
+[connection signal="pressed" from="Shop/ShipUpgrades/Panel3/Button" to="Shop/ShipUpgrades/Panel3/Button" method="_on_pressed"]
+[connection signal="buy_speed" from="Shop/ShipUpgrades/Panel2/Button" to="Player" method="_on_button_buy_speed"]
+[connection signal="buy_speed" from="Shop/ShipUpgrades/Panel2/Button" to="Coins" method="_on_button_buy_speed"]
+[connection signal="pressed" from="Shop/ShipUpgrades/Panel2/Button" to="Shop/ShipUpgrades/Panel2/Button" method="_on_pressed"]
+[connection signal="pressed" from="Shop/exit" to="Player" method="_on_exit_pressed"]
+[connection signal="pressed" from="Shop/exit" to="Wave_counter" method="_on_exit_pressed"]
+[connection signal="pressed" from="Shop/exit" to="Shop" method="_on_exit_pressed"]
+[connection signal="pressed" from="Shop/exit" to="Shop/exit" method="_on_pressed"]
+[connection signal="pressed" from="Shop/exit" to="Shop/PowerUpUpgrades/Panel5/Button" method="_on_exit_pressed"]
+[connection signal="pressed" from="Shop/exit" to="Suicider" method="_on_exit_pressed"]
+[connection signal="pressed" from="Shop/exit" to="Bomber" method="_on_exit_pressed"]
+[connection signal="MaxShield" from="Shop/PowerUpUpgrades/Panel2/Button" to="Shop/PowerUpUpgrades/Panel5/Button" method="_on_button_max_shield"]
+[connection signal="buy_shield" from="Shop/PowerUpUpgrades/Panel2/Button" to="Player/Shield" method="_on_button_buy_shield"]
+[connection signal="buy_shield" from="Shop/PowerUpUpgrades/Panel2/Button" to="ProgressBar" method="_on_button_buy_shield"]
+[connection signal="buy_shield" from="Shop/PowerUpUpgrades/Panel2/Button" to="Coins" method="_on_button_buy_shield"]
+[connection signal="pick_shield" from="Shop/PowerUpUpgrades/Panel2/Button" to="Player" method="_on_button_pick_shield"]
+[connection signal="pick_shield" from="Shop/PowerUpUpgrades/Panel2/Button" to="Shop/PowerUpUpgrades/Panel5/Button" method="_on_button_pick_shield"]
+[connection signal="pressed" from="Shop/PowerUpUpgrades/Panel2/Button" to="Shop/PowerUpUpgrades/Panel2/Button" method="_on_pressed"]
+[connection signal="BuyFire" from="Shop/PowerUpUpgrades/Panel3/Button" to="Player" method="_on_button_buy_fire"]
+[connection signal="BuyFire" from="Shop/PowerUpUpgrades/Panel3/Button" to="ProgressBar" method="_on_button_buy_fire"]
+[connection signal="BuyFire" from="Shop/PowerUpUpgrades/Panel3/Button" to="Coins" method="_on_button_buy_fire"]
+[connection signal="MaxedFire" from="Shop/PowerUpUpgrades/Panel3/Button" to="Shop/PowerUpUpgrades/Panel5/Button" method="_on_button_maxed_fire"]
+[connection signal="pick_fire" from="Shop/PowerUpUpgrades/Panel3/Button" to="Player" method="_on_button_pick_fire"]
+[connection signal="pick_fire" from="Shop/PowerUpUpgrades/Panel3/Button" to="Shop/PowerUpUpgrades/Panel5/Button" method="_on_button_pick_fire"]
+[connection signal="pressed" from="Shop/PowerUpUpgrades/Panel3/Button" to="Shop/PowerUpUpgrades/Panel3/Button" method="_on_pressed"]
+[connection signal="BuyScore" from="Shop/PowerUpUpgrades/Panel4/Button" to="." method="_on_button_buy_score"]
+[connection signal="BuyScore" from="Shop/PowerUpUpgrades/Panel4/Button" to="ProgressBar" method="_on_button_buy_score"]
+[connection signal="BuyScore" from="Shop/PowerUpUpgrades/Panel4/Button" to="Coins" method="_on_button_buy_score"]
+[connection signal="MaxedScore" from="Shop/PowerUpUpgrades/Panel4/Button" to="Shop/PowerUpUpgrades/Panel5/Button" method="_on_button_maxed_score"]
+[connection signal="pick_score" from="Shop/PowerUpUpgrades/Panel4/Button" to="." method="_on_button_pick_score"]
+[connection signal="pick_score" from="Shop/PowerUpUpgrades/Panel4/Button" to="Player" method="_on_button_pick_score"]
+[connection signal="pick_score" from="Shop/PowerUpUpgrades/Panel4/Button" to="Shop/PowerUpUpgrades/Panel5/Button" method="_on_button_pick_score"]
+[connection signal="pressed" from="Shop/PowerUpUpgrades/Panel4/Button" to="Shop/PowerUpUpgrades/Panel4/Button" method="_on_pressed"]
+[connection signal="pressed" from="Shop/PowerUpUpgrades/Panel5/Button" to="Shop/PowerUpUpgrades/Panel5/Button" method="_on_pressed"]
+[connection signal="reset" from="Shop/PowerUpUpgrades/Panel5/Button" to="Shop/PowerUpUpgrades/Panel2/Button" method="_on_button_reset"]
+[connection signal="reset" from="Shop/PowerUpUpgrades/Panel5/Button" to="Shop/PowerUpUpgrades/Panel2/Label2" method="_on_button_reset"]
+[connection signal="reset" from="Shop/PowerUpUpgrades/Panel5/Button" to="Shop/PowerUpUpgrades/Panel3/Button" method="_on_button_reset"]
+[connection signal="reset" from="Shop/PowerUpUpgrades/Panel5/Button" to="Shop/PowerUpUpgrades/Panel3/Label2" method="_on_button_reset"]
+[connection signal="reset" from="Shop/PowerUpUpgrades/Panel5/Button" to="Shop/PowerUpUpgrades/Panel4/Button" method="_on_button_reset"]
+[connection signal="reset" from="Shop/PowerUpUpgrades/Panel5/Button" to="Shop/PowerUpUpgrades/Panel4/Label2" method="_on_button_reset"]
+[connection signal="super_nova" from="Shop/PowerUpUpgrades/Panel5/Button" to="Shop/PowerUpUpgrades/Panel2/Button" method="_on_button_super_nova"]
+[connection signal="super_nova" from="Shop/PowerUpUpgrades/Panel5/Button" to="Shop/PowerUpUpgrades/Panel2/Label2" method="_on_button_super_nova"]
+[connection signal="super_nova" from="Shop/PowerUpUpgrades/Panel5/Button" to="Shop/PowerUpUpgrades/Panel3/Button" method="_on_button_super_nova"]
+[connection signal="super_nova" from="Shop/PowerUpUpgrades/Panel5/Button" to="Shop/PowerUpUpgrades/Panel3/Label2" method="_on_button_super_nova"]
+[connection signal="super_nova" from="Shop/PowerUpUpgrades/Panel5/Button" to="Shop/PowerUpUpgrades/Panel4/Button" method="_on_button_super_nova"]
+[connection signal="super_nova" from="Shop/PowerUpUpgrades/Panel5/Button" to="Shop/PowerUpUpgrades/Panel4/Label2" method="_on_button_super_nova"]
+[connection signal="coin" from="Tank Enemy" to="Coin_spawner" method="_on_tank_enemy_coin"]
+[connection signal="enemy_laser_shot" from="Tank Enemy" to="." method="_on_tank_enemy_enemy_laser_shot"]
+[connection signal="killed" from="Tank Enemy" to="." method="_on_tank_enemy_killed"]
+[connection signal="player_die" from="Tank Enemy" to="Player" method="_on_tank_enemy_player_die"]
+[connection signal="screen_shake" from="Tank Enemy" to="Camera2D" method="_on_tank_enemy_screen_shake"]
+[connection signal="spawn_horde" from="Horde Spawner" to="." method="_on_horde_spawner_spawn_horde"]
+[connection signal="spawn_asteroid_field" from="asteroid_field_spawner" to="." method="_on_asteroid_field_spawner_spawn_asteroid_field"]
+[connection signal="hit" from="Suicider" to="." method="_on_suicider_hit"]
+[connection signal="killed" from="Suicider" to="." method="_on_suicider_killed"]
+[connection signal="player_die" from="Suicider" to="Player" method="_on_suicider_player_die"]
+[connection signal="screen_shake" from="Suicider" to="Camera2D" method="_on_suicider_screen_shake"]
+[connection signal="body_entered" from="Bomber" to="Bomber" method="_on_body_entered"]
+[connection signal="hit" from="Bomber" to="." method="_on_bomber_hit"]
+[connection signal="killed" from="Bomber" to="." method="_on_bomber_killed"]
+[connection signal="player_die" from="Bomber" to="Player" method="_on_bomber_player_die"]

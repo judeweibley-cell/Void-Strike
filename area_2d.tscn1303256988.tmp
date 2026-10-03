@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://muk847mu1quy"]
+
+[ext_resource type="Script" uid="uid://cgsi2ttgphuha" path="res://Power_up.gd" id="1_nhxoo"]
+[ext_resource type="Texture2D" uid="uid://xua4m083ndvl" path="res://assets/power_up-removebg-preview.png" id="2_5ieuq"]
+
+[node name="Power_Up" type="Area2D"]
+script = ExtResource("1_nhxoo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_5ieuq")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-10, -27, -1, -29, 10, -28, 21, -23, 28, -15, 28, -12, 15, -12, 10, -7, 15, -4, 16, 2, 15, 28, 1, 30, -19, 29, -19, 0, -13, -5, -18, -13, -28, -12, -24, -21, -14, -27)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, -45)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

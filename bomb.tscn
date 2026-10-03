@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://bipp5glijs0ws"]
+
+[ext_resource type="Script" uid="uid://dsqcdhanwmjg2" path="res://scenes/bomb.gd" id="1_vpdcx"]
+[ext_resource type="Texture2D" uid="uid://bgvc5ame115k6" path="res://assets/Screenshot_2026-09-05_181237-removebg-preview.png" id="2_j15uc"]
+[ext_resource type="Script" uid="uid://bio0vliwmvtmg" path="res://scenes/explosion2.gd" id="3_84slv"]
+[ext_resource type="Texture2D" uid="uid://bcba20qv4s80r" path="res://assets/Screenshot_2026-08-31_210527-removebg-preview.png" id="4_nxi8k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vpdcx"]
+radius = 64.4429
+
+[node name="Bomb" type="Area2D"]
+scale = Vector2(0.1, 0.1)
+collision_layer = 7
+script = ExtResource("1_vpdcx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(6.10352e-05, 0)
+texture = ExtResource("2_j15uc")
+region_enabled = true
+region_rect = Rect2(130.984, 37.6217, 276.818, 419.478)
+
+[node name="Explosion" type="Area2D" parent="."]
+position = Vector2(-0.000121117, 0.000124931)
+scale = Vector2(50, 50)
+collision_layer = 7
+script = ExtResource("3_84slv")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Explosion"]
+position = Vector2(4.76837e-06, 0)
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("4_nxi8k")
+region_enabled = true
+region_rect = Rect2(138.5, 33, 374, 374)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Explosion"]
+light_mask = 7
+position = Vector2(2.42233e-06, -2.49863e-06)
+scale = Vector2(0.075, 0.075)
+shape = SubResource("CircleShape2D_vpdcx")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="Explosion" to="Explosion" method="_on_body_entered"]
+[connection signal="damage_player" from="Explosion" to="." method="_on_explosion_damage_player"]

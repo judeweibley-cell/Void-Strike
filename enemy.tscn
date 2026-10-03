@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://n6lb171rl3wr"]
+
+[ext_resource type="Texture2D" uid="uid://r24pgqksfya" path="res://assets/Screenshot_2026-06-03_190847-removebg-preview.png" id="1_7p1mj"]
+[ext_resource type="Script" uid="uid://c5x0t0gpkrdob" path="res://scripts/enemy.gd" id="1_md0e3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ra3w"]
+size = Vector2(86, 70)
+
+[node name="Enemy" type="Area2D"]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_md0e3")
+hp = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(228, 134)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_7p1mj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(227.5, 137)
+shape = SubResource("RectangleShape2D_4ra3w")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(228, 79)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
